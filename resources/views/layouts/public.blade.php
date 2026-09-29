@@ -26,75 +26,53 @@
 
             </a>
 
-            <!-- Navigation Links -->
-            <nav class="hidden lg:flex items-center space-x-5 font-semibold text-[13px] tracking-wide text-forest/90">
-                <!-- Problem -->
-                <a href="{{ route('home') }}#problem" class="hover:text-leaf-green transition-colors duration-200">{{ app()->getLocale() === 'en' ? 'Problem' : 'Masalah' }}</a>
+            <!-- Navigation Links (Simple, Clean, Professional) -->
+            <nav class="hidden lg:flex items-center space-x-7 font-semibold text-[13px] tracking-wide text-forest/90">
+                <!-- Tentang / Problem & Solution -->
+                <a href="{{ route('home') }}#problem" class="hover:text-leaf-green transition-colors duration-200">{{ app()->getLocale() === 'en' ? 'About' : 'Tentang' }}</a>
 
-                <!-- Solution -->
-                <a href="{{ route('home') }}#solution" class="hover:text-leaf-green transition-colors duration-200">{{ app()->getLocale() === 'en' ? 'Solution' : 'Solusi' }}</a>
-                
-                <!-- Products Storefront Link -->
-                <a href="{{ route('products.index') }}" class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-leaf-green/10 border border-leaf-green/25 text-leaf-green hover:bg-leaf-green hover:text-white transition-all duration-200 shadow-2xs font-bold {{ request()->routeIs('products.index') ? 'bg-leaf-green text-white shadow-xs' : '' }}">
-                    <span>🛒</span>
-                    <span>{{ app()->getLocale() === 'en' ? 'Store & Products' : 'Produk & Toko' }}</span>
-                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green-light animate-pulse"></span>
-                </a>
+                <!-- Produk -->
+                <a href="{{ route('products.index') }}" class="hover:text-leaf-green transition-colors duration-200 {{ request()->routeIs('products.index') ? 'text-leaf-green font-bold' : '' }}">{{ app()->getLocale() === 'en' ? 'Products' : 'Produk' }}</a>
 
-                <!-- How It Works -->
-                <a href="{{ route('home') }}#how-it-works" class="hover:text-leaf-green transition-colors duration-200">{{ app()->getLocale() === 'en' ? 'How It Works' : 'Cara Kerja' }}</a>
+                <!-- Teknologi & Cara Kerja -->
+                <a href="{{ route('home') }}#how-it-works" class="hover:text-leaf-green transition-colors duration-200">{{ app()->getLocale() === 'en' ? 'Technology' : 'Teknologi' }}</a>
 
-                <!-- Field Validation -->
-                <a href="{{ route('home') }}#validation" class="hover:text-leaf-green transition-colors duration-200">{{ app()->getLocale() === 'en' ? 'Validation' : 'Validasi Lapangan' }}</a>
+                <!-- Validasi Lapangan -->
+                <a href="{{ route('home') }}#validation" class="hover:text-leaf-green transition-colors duration-200">{{ app()->getLocale() === 'en' ? 'Validation' : 'Validasi' }}</a>
 
-                <!-- Business Model -->
-                <a href="{{ route('home') }}#business-model" class="hover:text-leaf-green transition-colors duration-200">{{ app()->getLocale() === 'en' ? 'Business Model' : 'Model Bisnis' }}</a>
-
-                <!-- Impact -->
-                <a href="{{ route('home') }}#impact" class="hover:text-leaf-green transition-colors duration-200">{{ app()->getLocale() === 'en' ? 'Impact' : 'Dampak' }}</a>
-
-                <!-- More Dropdown -->
+                <!-- More Dropdown (Simple) -->
                 <div class="relative group py-2">
                     <button class="flex items-center space-x-1 hover:text-leaf-green transition-colors duration-200 focus:outline-none">
                         <span>{{ app()->getLocale() === 'en' ? 'Explore' : 'Eksplorasi' }}</span>
-                        <svg class="w-3 h-3 transform group-hover:rotate-180 transition-transform duration-200 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-3.5 h-3.5 transform group-hover:rotate-180 transition-transform duration-200 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </button>
-                    <div class="absolute top-full right-0 hidden group-hover:block w-56 bg-white border border-sand/40 rounded-2xl shadow-xl py-2 z-50 text-xs text-charcoal font-sans">
-                        <a href="{{ route('home') }}#stories" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium">
-                            {{ app()->getLocale() === 'en' ? 'Field Story (Ibu Karminah)' : 'Kisah Lapangan (Ibu Karminah)' }}
+                    <div class="absolute top-full right-0 hidden group-hover:block w-52 bg-white border border-sand/40 rounded-2xl shadow-xl py-2 z-50 text-xs text-charcoal font-sans">
+                        <a href="{{ route('home') }}#business-model" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium">
+                            {{ app()->getLocale() === 'en' ? 'Business Model' : 'Model Bisnis' }}
                         </a>
-                        <a href="{{ route('home') }}#map" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium">
-                            {{ app()->getLocale() === 'en' ? 'Telemetry Coordinates Map' : 'Peta Koordinat Telemetri' }}
+                        <a href="{{ route('home') }}#impact" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium">
+                            {{ app()->getLocale() === 'en' ? 'Impact & Sustainability' : 'Dampak & Keberlanjutan' }}
+                        </a>
+                        <a href="{{ route('home') }}#stories" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium">
+                            {{ app()->getLocale() === 'en' ? 'Field Story' : 'Kisah Lapangan' }}
                         </a>
                         <a href="{{ route('home') }}#roadmap" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium">
-                            {{ app()->getLocale() === 'en' ? 'Roadmap 2026-2029+' : 'Peta Jalan 2026-2029+' }}
-                        </a>
-                        <a href="{{ route('home') }}#haki" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium">
-                            {{ app()->getLocale() === 'en' ? 'Intellectual Property (HAKI)' : 'Kekayaan Intelektual (HAKI)' }}
+                            {{ app()->getLocale() === 'en' ? 'Roadmap' : 'Peta Jalan' }}
                         </a>
                         <a href="{{ route('home') }}#team" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium">
                             {{ app()->getLocale() === 'en' ? 'Official Team' : 'Tim Pengembang' }}
                         </a>
-                        <a href="{{ route('home') }}#partners" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium">
-                            {{ app()->getLocale() === 'en' ? 'Ecosystem Partners' : 'Mitra Ekosistem' }}
-                        </a>
                         <div class="border-t border-sand/40 my-1"></div>
-                        <a href="{{ route('knowledge') }}" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium {{ request()->routeIs('knowledge') ? 'text-leaf-green font-bold' : '' }}">
+                        <a href="{{ route('knowledge') }}" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium">
                             {{ app()->getLocale() === 'en' ? 'Knowledge Hub' : 'Pusat Pengetahuan' }}
                         </a>
-                        <a href="{{ route('journey') }}" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium {{ request()->routeIs('journey') ? 'text-leaf-green font-bold' : '' }}">
+                        <a href="{{ route('journey') }}" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium">
                             {{ app()->getLocale() === 'en' ? 'Our Journey' : 'Perjalanan Kami' }}
                         </a>
-                        <a href="{{ route('credibility') }}" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium {{ request()->routeIs('credibility') ? 'text-leaf-green font-bold' : '' }}">
-                            {{ app()->getLocale() === 'en' ? 'Credibility & Awards' : 'Kredibilitas & Penghargaan' }}
-                        </a>
-                        <a href="{{ route('esg') }}" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium {{ request()->routeIs('esg') ? 'text-leaf-green font-bold' : '' }}">
-                            {{ app()->getLocale() === 'en' ? 'ESG Dashboard' : 'Dashboard ESG' }}
-                        </a>
-                        <a href="{{ route('investors') }}" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium {{ request()->routeIs('investors') ? 'text-leaf-green font-bold' : '' }}">
-                            {{ app()->getLocale() === 'en' ? 'Investor Relations' : 'Hubungan Investor' }}
+                        <a href="{{ route('credibility') }}" class="block px-4 py-2 hover:bg-primary-cream/40 hover:text-leaf-green transition-colors font-medium">
+                            {{ app()->getLocale() === 'en' ? 'Credibility & HAKI' : 'Kredibilitas & HAKI' }}
                         </a>
                     </div>
                 </div>
@@ -127,7 +105,7 @@
             </button>
         </div>
 
-        <!-- Mobile Navigation Dropdown -->
+        <!-- Mobile Navigation Dropdown (Simple & Clean) -->
         <div id="mobile-menu" class="hidden lg:hidden bg-bg-base border-b border-sand px-6 py-4 space-y-2 shadow-inner">
             <!-- Language Selector for Mobile -->
             <div class="flex items-center justify-between pb-2 border-b border-sand">
@@ -137,20 +115,13 @@
                     <a href="{{ route('set-locale', 'en') }}" class="px-3 py-1 text-[10px] font-bold rounded-full transition-colors {{ app()->getLocale() === 'en' ? 'bg-forest text-primary-cream' : 'text-forest' }}">EN</a>
                 </div>
             </div>
-            <a href="{{ route('home') }}#problem" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'Problem' : 'Masalah' }}</a>
-            <a href="{{ route('home') }}#solution" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'Solution' : 'Solusi' }}</a>
-            <a href="{{ route('products.index') }}" class="flex items-center justify-between text-sm font-bold text-leaf-green hover:text-forest py-2 px-3 rounded-xl bg-leaf-green/10 border border-leaf-green/25 my-1">
-                <span>🛒 {{ app()->getLocale() === 'en' ? 'Store & Products (Katalog)' : 'Katalog Produk & Toko Agritech' }}</span>
-                <span class="text-[9px] bg-leaf-green text-white font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">Ready Stock</span>
-            </a>
-            <a href="{{ route('home') }}#how-it-works" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'How It Works' : 'Cara Kerja' }}</a>
-            <a href="{{ route('home') }}#validation" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'Field Validation' : 'Validasi Lapangan' }}</a>
-            <a href="{{ route('home') }}#business-model" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'Business Model' : 'Model Bisnis' }}</a>
-            <a href="{{ route('home') }}#impact" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'Impact' : 'Dampak' }}</a>
-            <a href="{{ route('home') }}#roadmap" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'Roadmap' : 'Peta Jalan' }}</a>
-            <a href="{{ route('home') }}#team" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'Official Team' : 'Tim Pengembang' }}</a>
-            <a href="{{ route('knowledge') }}" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'Knowledge Hub' : 'Pusat Pengetahuan' }}</a>
-            <a href="{{ route('journey') }}" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'Our Journey' : 'Perjalanan Kami' }}</a>
+            <a href="{{ route('home') }}#problem" class="block text-sm font-medium text-forest hover:text-leaf-green py-1.5">{{ app()->getLocale() === 'en' ? 'About' : 'Tentang' }}</a>
+            <a href="{{ route('products.index') }}" class="block text-sm font-medium text-forest hover:text-leaf-green py-1.5 {{ request()->routeIs('products.index') ? 'text-leaf-green font-bold' : '' }}">{{ app()->getLocale() === 'en' ? 'Products' : 'Produk' }}</a>
+            <a href="{{ route('home') }}#how-it-works" class="block text-sm font-medium text-forest hover:text-leaf-green py-1.5">{{ app()->getLocale() === 'en' ? 'Technology' : 'Teknologi' }}</a>
+            <a href="{{ route('home') }}#validation" class="block text-sm font-medium text-forest hover:text-leaf-green py-1.5">{{ app()->getLocale() === 'en' ? 'Field Validation' : 'Validasi Lapangan' }}</a>
+            <a href="{{ route('home') }}#business-model" class="block text-sm font-medium text-forest hover:text-leaf-green py-1.5">{{ app()->getLocale() === 'en' ? 'Business Model' : 'Model Bisnis' }}</a>
+            <a href="{{ route('knowledge') }}" class="block text-sm font-medium text-forest hover:text-leaf-green py-1.5">{{ app()->getLocale() === 'en' ? 'Knowledge Hub' : 'Pusat Pengetahuan' }}</a>
+            <a href="{{ route('journey') }}" class="block text-sm font-medium text-forest hover:text-leaf-green py-1.5">{{ app()->getLocale() === 'en' ? 'Our Journey' : 'Perjalanan Kami' }}</a>
             <hr class="border-sand">
             @auth
                 @if(auth()->user()->role === 'admin')
@@ -159,7 +130,7 @@
                     <a href="{{ route('writer.dashboard') }}" class="block text-center px-4 py-2 rounded-xl text-xs font-semibold bg-leaf-green text-white">{{ app()->getLocale() === 'en' ? 'Writer Dashboard' : 'Dashboard Penulis' }}</a>
                 @endif
             @else
-                <a href="{{ route('home') }}#contact" class="block text-center px-4 py-2 rounded-xl text-xs font-semibold bg-forest text-white">{{ app()->getLocale() === 'en' ? 'Partner With Us' : 'Bermitra dengan Kami' }}</a>
+                <a href="{{ route('home') }}#contact" class="block text-center px-4 py-2.5 rounded-xl text-xs font-bold bg-forest text-primary-cream">{{ app()->getLocale() === 'en' ? 'Partner With Us' : 'Bermitra dengan Kami' }}</a>
             @endauth
         </div>
     </header>
@@ -202,7 +173,7 @@
             <div class="md:col-span-3">
                 <h4 class="font-bold text-xs text-forest uppercase tracking-widest mb-4">{{ app()->getLocale() === 'en' ? 'Core Architecture' : 'Arsitektur Inti' }}</h4>
                 <ul class="space-y-2.5 text-xs font-medium text-charcoal/80">
-                    <li><a href="{{ route('products.index') }}" class="font-bold text-leaf-green hover:underline flex items-center space-x-1"><span>🛒</span><span>{{ app()->getLocale() === 'en' ? 'Store & Product Bundles' : 'Katalog & Toko Produk' }}</span></a></li>
+                    <li><a href="{{ route('products.index') }}" class="font-bold text-leaf-green hover:underline">{{ app()->getLocale() === 'en' ? 'Store & Product Bundles' : 'Katalog & Toko Produk' }}</a></li>
                     <li><a href="{{ route('home') }}#problem" class="hover:text-leaf-green">{{ app()->getLocale() === 'en' ? 'The Problem' : 'Masalah Ketidakpastian' }}</a></li>
                     <li><a href="{{ route('home') }}#solution" class="hover:text-leaf-green">{{ app()->getLocale() === 'en' ? 'System Solution' : 'Solusi & Alur Kerja' }}</a></li>
                     <li><a href="{{ route('products.index') }}" class="hover:text-leaf-green">{{ app()->getLocale() === 'en' ? '01 Field Sensing (SoilSense & Terra)' : '01 Field Sensing (SoilSense & Terra)' }}</a></li>

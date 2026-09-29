@@ -4,8 +4,8 @@
 
 @section('content')
 <!-- COMMERCIAL HOOK HERO SECTION -->
-<section class="relative bg-gradient-to-b from-primary-cream via-primary-cream/50 to-bg-base pt-24 pb-16 border-b border-sand/40 overflow-hidden">
-    <!-- Background Motif Pattern -->
+<section class="relative bg-gradient-to-b from-primary-cream via-primary-cream/50 to-bg-base pt-20 pb-16 border-b border-sand/40 overflow-hidden">
+    <!-- Subtle Background Grid Pattern -->
     <div class="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#1B3B2B_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -20,8 +20,8 @@
             <div class="lg:col-span-8 space-y-6">
                 <!-- Commercial Hook Eyebrow -->
                 <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-leaf-green/10 border border-leaf-green/20 text-xs font-extrabold text-leaf-green uppercase tracking-wider">
-                    <span class="w-2 h-2 rounded-full bg-leaf-green animate-ping"></span>
-                    <span>KATALOG &amp; PENJUALAN RESMI 2026 &bull; READY STOCK</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green"></span>
+                    <span>Katalog &amp; Penjualan Resmi 2026 &bull; Ready Stock</span>
                 </div>
 
                 <!-- Big Hook Headline -->
@@ -36,45 +36,33 @@
                     Tinggalkan pemupukan tebak-tebakan yang memboroskan jutaan rupiah. Sensor presisi AGRONEX membaca kadar NPK, pH, kelembaban, dan iklim mikro secara real-time langsung ke ponsel Anda.
                 </p>
 
-                <!-- Value Proposition Trust Bar -->
+                <!-- Value Proposition Trust Bar (No Emojis, Clean Professional Badges) -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-                    <div class="p-3 bg-white/80 backdrop-blur rounded-2xl border border-sand/60 shadow-xs flex items-center space-x-2.5">
-                        <span class="text-xl">🛡️</span>
-                        <div>
-                            <div class="text-[11px] font-extrabold text-forest">Garansi 12 Bln</div>
-                            <div class="text-[9px] text-charcoal/60">Ganti baru tanpa ribet</div>
-                        </div>
+                    <div class="p-3.5 bg-white/80 backdrop-blur rounded-2xl border border-sand/60 shadow-xs">
+                        <div class="text-[11px] font-extrabold text-forest uppercase tracking-wider">Garansi 12 Bulan</div>
+                        <div class="text-[10px] text-charcoal/60 mt-0.5">Penggantian unit resmi</div>
                     </div>
-                    <div class="p-3 bg-white/80 backdrop-blur rounded-2xl border border-sand/60 shadow-xs flex items-center space-x-2.5">
-                        <span class="text-xl">🚚</span>
-                        <div>
-                            <div class="text-[11px] font-extrabold text-forest">Kirim Nusantara</div>
-                            <div class="text-[9px] text-charcoal/60">Packing aman &amp; asuransi</div>
-                        </div>
+                    <div class="p-3.5 bg-white/80 backdrop-blur rounded-2xl border border-sand/60 shadow-xs">
+                        <div class="text-[11px] font-extrabold text-forest uppercase tracking-wider">Kirim Nusantara</div>
+                        <div class="text-[10px] text-charcoal/60 mt-0.5">Kemasan aman &amp; asuransi</div>
                     </div>
-                    <div class="p-3 bg-white/80 backdrop-blur rounded-2xl border border-sand/60 shadow-xs flex items-center space-x-2.5">
-                        <span class="text-xl">⚡</span>
-                        <div>
-                            <div class="text-[11px] font-extrabold text-forest">Plug &amp; Play</div>
-                            <div class="text-[9px] text-charcoal/60">Tancap langsung aktif</div>
-                        </div>
+                    <div class="p-3.5 bg-white/80 backdrop-blur rounded-2xl border border-sand/60 shadow-xs">
+                        <div class="text-[11px] font-extrabold text-forest uppercase tracking-wider">Sistem Plug &amp; Play</div>
+                        <div class="text-[10px] text-charcoal/60 mt-0.5">Termasuk kartu SIM IoT</div>
                     </div>
-                    <div class="p-3 bg-white/80 backdrop-blur rounded-2xl border border-sand/60 shadow-xs flex items-center space-x-2.5">
-                        <span class="text-xl">👨‍🌾</span>
-                        <div>
-                            <div class="text-[11px] font-extrabold text-forest">Free Kalibrasi</div>
-                            <div class="text-[9px] text-charcoal/60">+ Pendampingan Lahan</div>
-                        </div>
+                    <div class="p-3.5 bg-white/80 backdrop-blur rounded-2xl border border-sand/60 shadow-xs">
+                        <div class="text-[11px] font-extrabold text-forest uppercase tracking-wider">Kalibrasi Lahan</div>
+                        <div class="text-[10px] text-charcoal/60 mt-0.5">Pendampingan agronomi</div>
                     </div>
                 </div>
 
                 <!-- Quick Action Buttons -->
                 <div class="flex flex-wrap items-center gap-4 pt-2">
-                    <a href="#katalog-produk" class="px-7 py-3.5 bg-forest text-primary-cream hover:bg-forest-dark font-extrabold text-xs uppercase tracking-wider rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center space-x-2">
-                        <span>🛒 Lihat Semua Produk &amp; Promo</span>
+                    <a href="#katalog-produk" class="px-7 py-3.5 bg-forest text-primary-cream hover:bg-forest-dark font-extrabold text-xs uppercase tracking-wider rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+                        Lihat Semua Produk &amp; Promo
                     </a>
-                    <a href="#hitung-roi" class="px-7 py-3.5 bg-white border border-sand hover:border-leaf-green text-forest font-extrabold text-xs uppercase tracking-wider rounded-full shadow-xs hover:shadow transition-all duration-300 flex items-center space-x-2">
-                        <span>📊 Hitung Penghematan Pupuk Anda</span>
+                    <a href="#hitung-roi" class="px-7 py-3.5 bg-white border border-sand hover:border-leaf-green text-forest font-extrabold text-xs uppercase tracking-wider rounded-full shadow-xs hover:shadow transition-all duration-300">
+                        Hitung Penghematan Pupuk Lahan
                     </a>
                 </div>
             </div>
@@ -82,11 +70,9 @@
             <!-- Hook Urgency Card Right -->
             <div class="lg:col-span-4">
                 <div class="bg-white rounded-3xl p-6 border-2 border-leaf-green/30 shadow-xl relative overflow-hidden space-y-5">
-                    <div class="absolute -right-8 -top-8 w-24 h-24 bg-leaf-green/10 rounded-full blur-xl pointer-events-none"></div>
-                    
                     <div class="flex items-center justify-between pb-3 border-b border-sand/50">
                         <span class="px-3 py-1 bg-leaf-green text-white text-[10px] font-extrabold uppercase rounded-full tracking-wider">
-                            PROMO BUNDLE BULAN INI
+                            Paket Rekomendasi
                         </span>
                         <span class="text-xs font-bold text-leaf-green">Hemat s/d 30%</span>
                     </div>
@@ -94,7 +80,7 @@
                     <div class="space-y-2">
                         <h3 class="font-extrabold text-lg text-forest font-display">Starter Kit Tani Presisi</h3>
                         <p class="text-xs text-charcoal/70 leading-relaxed">
-                            Paket bundling paling diminati petani hortikultura Garut: 1x SoilSense + 1x WaterSense + Cloud SIM 1 Tahun.
+                            Paket bundling pilihan petani hortikultura Garut: 1x SoilSense + 1x WaterSense + Akses Cloud &amp; SIM 1 Tahun.
                         </p>
                     </div>
 
@@ -108,16 +94,16 @@
 
                     <ul class="text-xs space-y-2 text-charcoal/80 font-medium">
                         <li class="flex items-center space-x-2">
-                            <span class="text-leaf-green font-bold">&check;</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
                             <span>Akurasi sensor tanah &amp; kelembapan &gt; 95%</span>
                         </li>
                         <li class="flex items-center space-x-2">
-                            <span class="text-leaf-green font-bold">&check;</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
                             <span>Termasuk Kartu SIM IoT Telkomsel 1 Tahun</span>
                         </li>
                         <li class="flex items-center space-x-2">
-                            <span class="text-leaf-green font-bold">&check;</span>
-                            <span>Akses Aplikasi Ponsel &amp; Alarm WhatsApp</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
+                            <span>Akses Aplikasi Ponsel &amp; Notifikasi Lahan</span>
                         </li>
                     </ul>
 
@@ -126,11 +112,11 @@
                         target="_blank"
                         class="w-full py-3.5 bg-leaf-green hover:bg-leaf-green-dark text-white font-extrabold text-xs uppercase tracking-wider rounded-2xl text-center block shadow-md hover:shadow-lg transition-all"
                     >
-                        💬 Pesan Promo via WhatsApp Sekarang
+                        Pesan Promo via WhatsApp
                     </a>
 
-                    <div class="text-[10px] text-center text-charcoal/50 italic">
-                        ⚡ Terbatas 15 unit untuk kloter produksi Garut bulan ini
+                    <div class="text-[10px] text-center text-charcoal/50">
+                        Terbatas 15 unit untuk kloter produksi Garut bulan ini
                     </div>
                 </div>
             </div>
@@ -162,7 +148,7 @@
                     Air &amp; Iklim Mikro (2)
                 </button>
                 <a href="#paket-bundle" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-leaf-green/10 border border-leaf-green/30 text-leaf-green hover:bg-leaf-green hover:text-white">
-                    🔥 Paket Bundling
+                    Paket Bundling
                 </a>
             </div>
         </div>
@@ -213,7 +199,7 @@
 
                         <!-- Stock Status Top Right -->
                         <div class="absolute top-3 right-3 px-2.5 py-1 bg-white/95 backdrop-blur-sm border border-sand/40 text-[9px] font-bold text-leaf-green rounded-full flex items-center space-x-1.5 shadow-sm">
-                            <span class="w-1.5 h-1.5 rounded-full bg-leaf-green animate-pulse"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-leaf-green"></span>
                             <span>Ready Stock</span>
                         </div>
                     </div>
@@ -222,11 +208,7 @@
                     <div class="p-6 space-y-4">
                         <!-- Rating & SKU -->
                         <div class="flex items-center justify-between text-xs">
-                            <div class="flex items-center space-x-1 text-amber-500 font-bold">
-                                <span>★</span>
-                                <span class="text-charcoal font-bold">{{ $rating }}</span>
-                                <span class="text-charcoal/40 text-[11px]">({{ $reviews }})</span>
-                            </div>
+                            <span class="text-charcoal/70 text-[11px] font-semibold">Rating: {{ $rating }}/5 ({{ $reviews }} ulasan)</span>
                             <span class="font-mono text-[10px] text-charcoal/50 uppercase font-semibold">SKU: {{ $sku }}</span>
                         </div>
 
@@ -248,39 +230,39 @@
                         <!-- Key Benefit Badges -->
                         <div class="space-y-1.5 text-xs text-charcoal/75">
                             @if($product->slug === 'soilsense')
-                                <div class="flex items-center space-x-1.5 text-[11px]">
-                                    <span class="text-leaf-green font-bold">&check;</span>
+                                <div class="flex items-center space-x-2 text-[11px]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
                                     <span>Monitoring pH, NPK, &amp; Kelembapan</span>
                                 </div>
-                                <div class="flex items-center space-x-1.5 text-[11px]">
-                                    <span class="text-leaf-green font-bold">&check;</span>
+                                <div class="flex items-center space-x-2 text-[11px]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
                                     <span>Hemat Pupuk s/d 25%</span>
                                 </div>
                             @elseif($product->slug === 'watersense')
-                                <div class="flex items-center space-x-1.5 text-[11px]">
-                                    <span class="text-leaf-green font-bold">&check;</span>
+                                <div class="flex items-center space-x-2 text-[11px]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
                                     <span>Sensor Volumetrik Air &amp; Debit Irigasi</span>
                                 </div>
-                                <div class="flex items-center space-x-1.5 text-[11px]">
-                                    <span class="text-leaf-green font-bold">&check;</span>
+                                <div class="flex items-center space-x-2 text-[11px]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
                                     <span>Cegah Busuk Akar &amp; Hemat Air 35%</span>
                                 </div>
                             @elseif($product->slug === 'envirosense')
-                                <div class="flex items-center space-x-1.5 text-[11px]">
-                                    <span class="text-leaf-green font-bold">&check;</span>
+                                <div class="flex items-center space-x-2 text-[11px]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
                                     <span>Suhu, Kelembaban RH &amp; Radiasi Sinar</span>
                                 </div>
-                                <div class="flex items-center space-x-1.5 text-[11px]">
-                                    <span class="text-leaf-green font-bold">&check;</span>
+                                <div class="flex items-center space-x-2 text-[11px]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
                                     <span>Deteksi Dini Jamur &amp; Cuaca Ekstrem</span>
                                 </div>
                             @elseif($product->slug === 'terra')
-                                <div class="flex items-center space-x-1.5 text-[11px]">
-                                    <span class="text-leaf-green font-bold">&check;</span>
+                                <div class="flex items-center space-x-2 text-[11px]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
                                     <span>Soil Scanner Portabel Multi-Lahan</span>
                                 </div>
-                                <div class="flex items-center space-x-1.5 text-[11px]">
-                                    <span class="text-leaf-green font-bold">&check;</span>
+                                <div class="flex items-center space-x-2 text-[11px]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
                                     <span>Uji Kesuburan dalam 3 Menit</span>
                                 </div>
                             @endif
@@ -313,24 +295,23 @@
                         <a 
                             href="https://wa.me/{{ $settings['contact_whatsapp'] ?? '6285862319524' }}?text=Halo%20Tim%20Agronex%20Nusantara,%20saya%20ingin%20memesan%20perangkat%20{{ urlencode($translatedName) }}%20(SKU:%20{{ $sku }}).%20Harga:%20Rp%20{{ $priceDisplay }}.%20Mohon%20info%20stok%20dan%20tata%20cara%20pembelian." 
                             target="_blank"
-                            class="w-full py-3 bg-leaf-green hover:bg-leaf-green-dark text-white font-extrabold text-xs uppercase tracking-wider rounded-xl text-center flex items-center justify-center space-x-2 shadow-xs hover:shadow-md transition-all"
+                            class="w-full py-3 bg-leaf-green hover:bg-leaf-green-dark text-white font-extrabold text-xs uppercase tracking-wider rounded-xl text-center block shadow-xs hover:shadow-md transition-all"
                         >
-                            <span>💬 Pesan Cepat via WA</span>
+                            Pesan via WhatsApp
                         </a>
 
                         <!-- Open Detail & Checkout Modal -->
                         <button 
                             type="button"
                             onclick='openCheckoutModal(@json($product), "{{ $translatedName }}", "{{ $translatedDesc }}", "{{ $priceDisplay }}", "{{ $origPriceDisplay }}", "{{ $sku }}", @json($packageList))'
-                            class="w-full py-2.5 bg-white border border-sand hover:border-forest text-forest hover:bg-primary-cream/40 font-bold text-xs rounded-xl transition-colors flex items-center justify-center space-x-1.5"
+                            class="w-full py-2.5 bg-white border border-sand hover:border-forest text-forest hover:bg-primary-cream/40 font-bold text-xs rounded-xl transition-colors text-center"
                         >
-                            <span>⚡ Detail &amp; Spesifikasi Lengkap</span>
+                            Detail &amp; Spesifikasi Lengkap
                         </button>
                     </div>
 
-                    <div class="text-[9px] text-center text-charcoal/50 flex items-center justify-center space-x-1">
-                        <span>🛡️</span>
-                        <span>{{ $product->warranty_info ?? 'Garansi Resmi 12 Bulan Ganti Baru' }}</span>
+                    <div class="text-[9px] text-center text-charcoal/50">
+                        {{ $product->warranty_info ?? 'Garansi Resmi 12 Bulan Ganti Baru' }}
                     </div>
                 </div>
             </div>
@@ -390,7 +371,7 @@
 
                 <!-- Durasi Panen -->
                 <div class="p-4 bg-primary-cream/30 rounded-2xl border border-sand/40 text-xs text-charcoal/70 space-y-1">
-                    <div class="font-bold text-forest">💡 Mengapa Petani Menghemat?</div>
+                    <div class="font-bold text-forest">Catatan Efisiensi Lapangan:</div>
                     <div>Sensor SoilSense &amp; WaterSense memberi tahu kapan tanah jenuh nutrisi sehingga petani tidak memupuk secara buta.</div>
                 </div>
             </div>
@@ -426,7 +407,7 @@
                     target="_blank"
                     class="block w-full py-3.5 bg-leaf-green hover:bg-leaf-green-dark text-white font-extrabold text-xs uppercase tracking-wider rounded-xl text-center shadow-lg transition-all"
                 >
-                    Konsultasikan Kebutuhan Lahan Anda via WA &rarr;
+                    Konsultasikan Kebutuhan Lahan Anda via WhatsApp &rarr;
                 </a>
             </div>
         </div>
@@ -449,7 +430,7 @@
             <div class="rounded-3xl border {{ $b['recommended'] ? 'border-2 border-leaf-green shadow-xl bg-primary-cream/15' : 'border-sand/60 bg-white shadow-xs' }} p-8 flex flex-col justify-between space-y-8 relative overflow-hidden">
                 @if($b['recommended'])
                     <div class="absolute top-0 right-0 bg-leaf-green text-white text-[9px] font-extrabold uppercase px-4 py-1 rounded-bl-2xl tracking-wider">
-                        PALING DIREKOMENDASIKAN
+                        Paling Direkomendasikan
                     </div>
                 @endif
 
@@ -481,7 +462,7 @@
                         <ul class="space-y-2.5 text-xs text-charcoal/80">
                             @foreach($b['items'] as $item)
                             <li class="flex items-start space-x-2">
-                                <span class="text-leaf-green font-bold flex-shrink-0 mt-0.5">&check;</span>
+                                <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0 mt-1.5"></span>
                                 <span>{{ $item }}</span>
                             </li>
                             @endforeach
@@ -491,7 +472,7 @@
 
                 <div class="space-y-4 pt-4 border-t border-sand/40">
                     <div class="p-3 bg-primary-cream/40 rounded-xl text-[11px] text-charcoal/80 italic font-medium">
-                        💡 {{ $b['roi_text'] }}
+                        {{ $b['roi_text'] }}
                     </div>
 
                     <a 
@@ -499,7 +480,7 @@
                         target="_blank"
                         class="block w-full py-3.5 {{ $b['recommended'] ? 'bg-forest hover:bg-forest-dark text-primary-cream' : 'bg-leaf-green hover:bg-leaf-green-dark text-white' }} font-extrabold text-xs uppercase tracking-wider rounded-xl text-center shadow-md transition-all"
                     >
-                        Pesan Paket Ini via WhatsApp
+                        Pesan Paket via WhatsApp
                     </a>
                 </div>
             </div>
@@ -529,8 +510,8 @@
                 <blockquote class="text-xs sm:text-sm text-charcoal/80 leading-relaxed italic">
                     &ldquo;Biasanya saya cuma nebak kapan harus kasih pupuk dan nyiram air. Setelah dipasang alat sensor Agronex, saya tahu persis kapan tanah lagi kekurangan air atau keasaman tanah berubah. Tanaman lebih sehat dan modal pupuk jadi jauh lebih hemat.&rdquo;
                 </blockquote>
-                <div class="flex items-center space-x-1 text-amber-500 text-sm">
-                    ★★★★★ <span class="text-xs text-charcoal/50 ml-2 font-semibold">Validasi Lahan Mei - Agustus 2026</span>
+                <div class="text-xs text-charcoal/50 font-semibold">
+                    Validasi Lapangan Mei - Agustus 2026
                 </div>
             </div>
 
@@ -571,7 +552,7 @@
             <div class="p-6 bg-primary-cream/30 rounded-2xl border border-sand/50 space-y-2">
                 <h4 class="font-extrabold text-forest text-sm">Bagaimana cara pemasangan dan kalibrasi sensor di lahan?</h4>
                 <p class="text-xs text-charcoal/75 leading-relaxed">
-                    Sangat mudah (Plug-and-Play). Cukup tancapkan probe sensor ke kedalaman zona perakaran (15-30 cm) dan hadapkan solar panel ke arah matahari. Tim kami juga menyediakan buku panduan bergambar, video tutorial, serta layanan pendampingan online/offline.
+                    Sangat praktis (Plug-and-Play). Tancapkan probe sensor ke kedalaman zona perakaran (15-30 cm) dan hadapkan solar panel ke arah matahari. Tim kami juga menyediakan buku panduan bergambar, video tutorial, serta layanan pendampingan teknisi.
                 </p>
             </div>
 
@@ -666,7 +647,7 @@
 
                 <!-- Submit Button -->
                 <button type="submit" class="w-full py-3.5 bg-leaf-green hover:bg-leaf-green-dark text-white font-extrabold text-xs uppercase tracking-wider rounded-2xl shadow-lg transition-all flex items-center justify-center space-x-2">
-                    <span>💬 Lanjutkan Pesanan ke WhatsApp Resmi</span>
+                    <span>Lanjutkan Pesanan ke WhatsApp</span>
                     <span>&rarr;</span>
                 </button>
             </form>
@@ -743,12 +724,12 @@
             packageList.forEach(item => {
                 const li = document.createElement('li');
                 li.className = 'flex items-center space-x-2';
-                li.innerHTML = '<span class="text-leaf-green font-bold">&check;</span><span>' + item + '</span>';
+                li.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span><span>' + item + '</span>';
                 listContainer.appendChild(li);
             });
         } else {
             const li = document.createElement('li');
-            li.innerHTML = '<span class="text-leaf-green font-bold">&check;</span><span>Unit Utama + Aksesoris Lengkap + Garansi Resmi 12 Bulan</span>';
+            li.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span><span>Unit Utama + Aksesoris Lengkap + Garansi Resmi 12 Bulan</span>';
             listContainer.appendChild(li);
         }
 

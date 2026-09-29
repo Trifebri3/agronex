@@ -308,7 +308,7 @@
             </div>
             
             <a href="{{ route('products.index') }}" class="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-forest text-primary-cream hover:bg-forest-dark font-extrabold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex-shrink-0">
-                <span>🛒 Buka Toko &amp; Promo Bundling</span>
+                <span>Buka Katalog Produk</span>
                 <span>&rarr;</span>
             </a>
         </div>
@@ -354,7 +354,7 @@
                             {{ $badge }}
                         </div>
                         <div class="absolute top-3 right-3 px-2.5 py-1 bg-white/95 backdrop-blur-sm text-leaf-green border border-sand/50 text-[9px] font-bold uppercase rounded-full tracking-wider flex items-center space-x-1.5 shadow-sm">
-                            <span class="w-1.5 h-1.5 rounded-full bg-leaf-green animate-pulse"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-leaf-green"></span>
                             <span>Ready Stock</span>
                         </div>
                     </div>
@@ -363,9 +363,8 @@
                     <div class="space-y-1.5">
                         <div class="flex items-center justify-between">
                             <span class="font-mono text-[10px] text-charcoal/50 uppercase font-semibold">SKU: {{ $sku }}</span>
-                            <div class="flex items-center space-x-1 text-amber-500 text-xs font-bold">
-                                <span>★</span>
-                                <span class="text-charcoal">{{ $product->rating ?? '4.9' }}</span>
+                            <div class="text-charcoal/70 text-xs font-semibold">
+                                <span>Rating: {{ $product->rating ?? '4.9' }}/5</span>
                                 <span class="text-charcoal/40 text-[10px]">({{ $product->reviews_count ?? 40 }} ulasan)</span>
                             </div>
                         </div>
@@ -390,32 +389,36 @@
                                 <span class="font-bold text-forest text-[10px] uppercase">Penggunaan:</span>
                                 <span>pH &bull; NPK &bull; Kelembapan Tanah</span>
                             </div>
-                            <div class="text-[10px] text-leaf-green font-semibold">
-                                &check; Terbukti menghemat pupuk kimia hingga 25% di lahan Garut
+                            <div class="text-[10px] text-leaf-green font-semibold flex items-center">
+                                <span class="w-1.5 h-1.5 rounded-full bg-leaf-green inline-block mr-1.5 flex-shrink-0"></span>
+                                <span>Terbukti menghemat pupuk kimia hingga 25% di lahan Garut</span>
                             </div>
                         @elseif($product->slug === 'watersense')
                             <div class="flex items-center space-x-1.5">
                                 <span class="font-bold text-forest text-[10px] uppercase">Penggunaan:</span>
                                 <span>Volumetrik Air &bull; Kualitas Air Irigasi</span>
                             </div>
-                            <div class="text-[10px] text-leaf-green font-semibold">
-                                &check; Mengurangi penyiraman berlebih &amp; mencegah busuk akar
+                            <div class="text-[10px] text-leaf-green font-semibold flex items-center">
+                                <span class="w-1.5 h-1.5 rounded-full bg-leaf-green inline-block mr-1.5 flex-shrink-0"></span>
+                                <span>Mengurangi penyiraman berlebih &amp; mencegah busuk akar</span>
                             </div>
                         @elseif($product->slug === 'envirosense')
                             <div class="flex items-center space-x-1.5">
                                 <span class="font-bold text-forest text-[10px] uppercase">Parameter:</span>
                                 <span>Suhu &bull; Kelembapan Relatif &bull; Iklim Mikro</span>
                             </div>
-                            <div class="text-[10px] text-leaf-green font-semibold">
-                                &check; Peringatan dini risiko serangan hama &amp; jamur via WhatsApp
+                            <div class="text-[10px] text-leaf-green font-semibold flex items-center">
+                                <span class="w-1.5 h-1.5 rounded-full bg-leaf-green inline-block mr-1.5 flex-shrink-0"></span>
+                                <span>Peringatan dini risiko serangan hama &amp; jamur via WhatsApp</span>
                             </div>
                         @elseif($product->slug === 'terra')
                             <div class="flex items-center space-x-1.5">
                                 <span class="font-bold text-forest text-[10px] uppercase">Fungsi:</span>
                                 <span>Soil Scanning Praktis &bull; Pemetaan Tanah Cepat</span>
                             </div>
-                            <div class="text-[10px] text-leaf-green font-semibold">
-                                &check; Uji kesuburan tanah 1 petak langsung di tempat dalam 3 menit
+                            <div class="text-[10px] text-leaf-green font-semibold flex items-center">
+                                <span class="w-1.5 h-1.5 rounded-full bg-leaf-green inline-block mr-1.5 flex-shrink-0"></span>
+                                <span>Uji kesuburan tanah 1 petak langsung di tempat dalam 3 menit</span>
                             </div>
                         @endif
                     </div>
@@ -447,9 +450,9 @@
                         <a 
                             href="https://wa.me/{{ $settings['contact_whatsapp'] ?? '6285862319524' }}?text=Halo%20Tim%20Agronex,%20saya%20tertarik%20membeli%20perangkat%20{{ urlencode($translatedProduct->name) }}%20(SKU:%20{{ $sku }}).%20Mohon%20info%20ketersediaan%20stok%20dan%20cara%20pemesanannya." 
                             target="_blank"
-                            class="py-2.5 bg-leaf-green hover:bg-leaf-green-dark text-white font-extrabold text-xs uppercase tracking-wider rounded-xl text-center shadow-xs hover:shadow-md transition-all flex items-center justify-center space-x-1"
+                            class="py-2.5 bg-leaf-green hover:bg-leaf-green-dark text-white font-extrabold text-xs uppercase tracking-wider rounded-xl text-center shadow-xs hover:shadow-md transition-all flex items-center justify-center"
                         >
-                            <span>💬 Beli via WA</span>
+                            <span>Pesan via WA</span>
                         </a>
 
                         <button 
@@ -462,7 +465,7 @@
                     </div>
 
                     <div class="text-[9px] text-center text-charcoal/50">
-                        🛡️ {{ $product->warranty_info ?? 'Garansi Resmi 12 Bulan Ganti Baru' }}
+                        {{ $product->warranty_info ?? 'Garansi Resmi 12 Bulan Ganti Baru' }}
                     </div>
                 </div>
             </div>
