@@ -2161,26 +2161,30 @@
                 scrollWheelZoom: false
             });
 
-            // High-resolution, reliable CartoDB Voyager layer (No 403 blocks, optimized for modern agritech display)
+            // Satellite imagery layer for real agricultural fields (Esri World Imagery + Reference Labels)
+            const esriBase = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, GIS User Community',
+                maxZoom: 19
+            });
+            const esriLabels = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+                maxZoom: 19
+            });
+            const satelliteLayer = L.layerGroup([esriBase, esriLabels]);
+
+            // High-resolution CartoDB Voyager layer (alternative topographic view)
             const voyagerLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank">CARTO</a>',
                 subdomains: 'abcd',
                 maxZoom: 20
             });
 
-            // Satellite imagery layer for real agricultural fields (Esri World Imagery)
-            const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, GIS User Community',
-                maxZoom: 19
-            });
-
-            // Add default layer
-            voyagerLayer.addTo(map);
+            // Set Satellite imagery as DEFAULT active layer directly
+            satelliteLayer.addTo(map);
 
             // Layer selector control
             const baseMaps = {
-                "Peta Lapangan Presisi": voyagerLayer,
-                "Citra Satelit Lahan": satelliteLayer
+                "Citra Satelit Pertanian": satelliteLayer,
+                "Peta Lapangan Presisi": voyagerLayer
             };
             L.control.layers(baseMaps, null, { position: 'topright' }).addTo(map);
 
@@ -2215,12 +2219,12 @@
                 const isWater = pt.category && pt.category.includes('Air');
 
                 const marker = L.circleMarker([pt.lat, pt.lng], {
-                    radius: isPilot ? 11 : 8,
-                    fillColor: isPilot ? "#143823" : (isWater ? "#0284c7" : "#2F5D50"),
-                    color: isPilot ? "#84cc16" : (isWater ? "#38bdf8" : "#6B9E4B"),
-                    weight: isPilot ? 3 : 2,
+                    radius: isPilot ? 12 : 9,
+                    fillColor: isPilot ? "#84cc16" : (isWater ? "#0ea5e9" : "#22c55e"),
+                    color: "#ffffff",
+                    weight: isPilot ? 3.5 : 2.5,
                     opacity: 1,
-                    fillOpacity: 0.9
+                    fillOpacity: 0.95
                 });
 
                 marker.bindPopup(`
