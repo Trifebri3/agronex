@@ -577,7 +577,7 @@ class AgronexOfficialSeeder extends Seeder
                 'name' => json_encode(['id' => 'Ariyanti Yusup', 'en' => 'Ariyanti Yusup']),
                 'role' => json_encode(['id' => 'Business & Marketing Lead', 'en' => 'Business & Marketing Lead']),
                 'category' => 'Business & Marketing',
-                'photo_path' => null,
+                'photo_path' => '/storage/uploads/team/img_6abc0f89ae6b04.90121307.webp',
                 'linkedin_url' => 'https://www.linkedin.com/in/ariyanti-yusup/',
                 'email' => 'ariyanti.yusup@agronex.id',
                 'bio' => json_encode([
@@ -595,7 +595,7 @@ class AgronexOfficialSeeder extends Seeder
                 'name' => json_encode(['id' => 'Salma Widiarti', 'en' => 'Salma Widiarti']),
                 'role' => json_encode(['id' => 'Agriculture & Field Operations', 'en' => 'Agriculture & Field Operations']),
                 'category' => 'Operations',
-                'photo_path' => null,
+                'photo_path' => '/storage/uploads/team/img_6abc0fc1c093f0.67688864.webp',
                 'linkedin_url' => 'https://www.linkedin.com/in/salma-widiarti/',
                 'email' => 'salma.widiarti@agronex.id',
                 'bio' => json_encode([
