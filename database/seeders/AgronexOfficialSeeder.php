@@ -59,6 +59,68 @@ class AgronexOfficialSeeder extends Seeder
             'contact_whatsapp' => '085862319524',
             'contact_linkedin' => 'linkedin.com/company/agronex',
             'contact_instagram' => 'https://www.instagram.com/agronex_nusantara?igsh=ZmdpZDV4aGN1ZTZl',
+            'commercial_bundles' => json_encode([
+                [
+                    'id' => 'solar-field-bundle',
+                    'name' => 'Paket Tani Mandiri Portable (Include Panel Surya)',
+                    'badge' => 'BUNDLING PANEL SURYA • BEST SELLER',
+                    'tagline' => '100% Mandiri Energi di Tengah Sawah & Portabel Siap Tancap Tanpa Kabel Listrik PLN.',
+                    'price' => 1350000,
+                    'original_price' => 2100000,
+                    'discount' => 'HEMAT 35%',
+                    'items' => [
+                        '1x SoilSense Telemetry Unit IP67 Weatherproof',
+                        '1x Panel Surya Monocrystalline 15W Efisiensi Tinggi',
+                        '1x Tripod Aluminium Lapangan Portable Ringan (Knock-Down)',
+                        '1x Baterai LiFePO4 Built-in (Tahan 30 Hari Tanpa Sinar)',
+                        '1x Multi-Parameter Soil Probe Stainless Steel 316 (pH, NPK, Lembap)',
+                        'Gratis 1 Tahun SIM IoT Telkomsel & Cloud Dashboard Mobile',
+                        'Garansi Resmi 12 Bulan Tukar Baru'
+                    ],
+                    'recommended' => true,
+                    'roi_text' => 'Estimasi Balik Modal: 1 Musim Panen (Penghematan Pupuk ~Rp 1,5 Juta/Musim)'
+                ],
+                [
+                    'id' => 'hydro-smart-kit',
+                    'name' => 'Paket Smart Hidroponik Komplit (All-in-One)',
+                    'badge' => 'SMART HIDROPONIK • AUTOMATION',
+                    'tagline' => 'Sistem monitoring nutrisi EC/TDS & pH air plus 2 unit pompa dosing otomatis untuk greenhouse & instalasi hidroponik.',
+                    'price' => 1650000,
+                    'original_price' => 2450000,
+                    'discount' => 'HEMAT 32%',
+                    'items' => [
+                        '1x HydroMaster Smart Controller Box dengan Layar Digital OLED',
+                        '1x Industrial Submersible EC/TDS Nutrient Probe',
+                        '1x High-Accuracy Glass/Gel pH Sensor Probe',
+                        '1x Sensor Suhu Air Waterproof Stainless Steel',
+                        '2x Pompa Peristaltik Dosing Otomatis Nutrisi A & B',
+                        'Modul WiFi & Bluetooth + Integrasi AgroPredict Cloud',
+                        'Garansi Resmi 12 Bulan Tukar Baru'
+                    ],
+                    'recommended' => false,
+                    'roi_text' => 'Meningkatkan Hasil Panen Hidroponik 30% & Cegah Bibit Mati Akibat Over-Nutrisi'
+                ],
+                [
+                    'id' => 'enterprise-kit',
+                    'name' => 'Skema Sewa Gotong Royong Poktan & Inklusif',
+                    'badge' => 'INKLUSIF • TANPA MODAL AWAL',
+                    'tagline' => 'Skema sewa gotong royong sangat terjangkau khusus Petani Kecil, Kelompok Tani (Poktan), dan Koperasi.',
+                    'price' => 45000,
+                    'price_subtext' => '/ unit / bulan',
+                    'original_price' => null,
+                    'discount' => 'SKEMA SEWA GOTONG ROYONG',
+                    'items' => [
+                        'Biaya Sewa Sangat Terjangkau Rp 45.000 / Bulan Tanpa DP',
+                        'Unit Bebas Ditukar Baru Jika Mengalami Kendala (All-Risk)',
+                        'Sudah Termasuk Modul Daya Portable Mandiri & SIM IoT',
+                        'Pendampingan Petugas Lapangan & Rekomendasi Dosis Pupuk',
+                        'Akses Dashboard Monitoring Kelompok & Info Harga Pasar',
+                        'Bebas Putus Sewa Kapan Saja Selesai Musim Panen'
+                    ],
+                    'recommended' => false,
+                    'roi_text' => 'Sangat Ringan: Biaya Sewa Tertutup Cukup dari Hasil 2 Kg Panen Cabai/Bawang!'
+                ]
+            ]),
         ];
 
         foreach ($settings as $key => $value) {

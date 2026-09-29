@@ -179,6 +179,18 @@ class AdminController extends Controller
             'name' => 'required|string',
             'slug' => 'required|string|unique:products,slug',
             'description' => 'required|string',
+            'price' => 'nullable|numeric',
+            'original_price' => 'nullable|numeric',
+            'subscription_price' => 'nullable|numeric',
+            'sku' => 'nullable|string',
+            'badge' => 'nullable|string',
+            'hook' => 'nullable|string',
+            'stock_status' => 'nullable|string',
+            'stock_count' => 'nullable|integer',
+            'rating' => 'nullable|numeric',
+            'reviews_count' => 'nullable|integer',
+            'warranty_info' => 'nullable|string',
+            'package_includes' => 'nullable|string',
             'features' => 'nullable|string',
             'image_path' => 'nullable|string',
             'detail_content' => 'nullable|string',
@@ -190,9 +202,27 @@ class AdminController extends Controller
             $imagePath = compress_and_store_image($request->file('image_file'), 'uploads/products');
         }
 
+        $packageIncludes = null;
+        if ($request->has('package_includes') && filled($request->package_includes)) {
+            $lines = array_filter(array_map('trim', explode("\n", $request->package_includes)));
+            $packageIncludes = !empty($lines) ? json_encode(array_values($lines)) : null;
+        }
+
         Product::create([
             'name' => $request->name,
             'slug' => $request->slug,
+            'price' => $request->price,
+            'original_price' => $request->original_price,
+            'subscription_price' => $request->subscription_price,
+            'sku' => $request->sku,
+            'badge' => $request->badge,
+            'hook' => $request->hook,
+            'stock_status' => $request->stock_status ?? 'in_stock',
+            'stock_count' => $request->stock_count ?? 20,
+            'rating' => $request->rating ?? 4.9,
+            'reviews_count' => $request->reviews_count ?? 40,
+            'warranty_info' => $request->warranty_info ?? 'Garansi Resmi 12 Bulan Ganti Baru',
+            'package_includes' => $packageIncludes,
             'description' => $request->description,
             'features' => $request->features,
             'image_path' => $imagePath,
@@ -215,6 +245,18 @@ class AdminController extends Controller
             'name' => 'required|string',
             'slug' => 'required|string|unique:products,slug,' . $id,
             'description' => 'required|string',
+            'price' => 'nullable|numeric',
+            'original_price' => 'nullable|numeric',
+            'subscription_price' => 'nullable|numeric',
+            'sku' => 'nullable|string',
+            'badge' => 'nullable|string',
+            'hook' => 'nullable|string',
+            'stock_status' => 'nullable|string',
+            'stock_count' => 'nullable|integer',
+            'rating' => 'nullable|numeric',
+            'reviews_count' => 'nullable|integer',
+            'warranty_info' => 'nullable|string',
+            'package_includes' => 'nullable|string',
             'features' => 'nullable|string',
             'image_path' => 'nullable|string',
             'detail_content' => 'nullable|string',
@@ -226,9 +268,27 @@ class AdminController extends Controller
             $imagePath = compress_and_store_image($request->file('image_file'), 'uploads/products');
         }
 
+        $packageIncludes = $product->package_includes;
+        if ($request->has('package_includes')) {
+            $lines = array_filter(array_map('trim', explode("\n", $request->package_includes)));
+            $packageIncludes = !empty($lines) ? json_encode(array_values($lines)) : null;
+        }
+
         $product->update([
             'name' => $request->name,
             'slug' => $request->slug,
+            'price' => $request->price,
+            'original_price' => $request->original_price,
+            'subscription_price' => $request->subscription_price,
+            'sku' => $request->sku,
+            'badge' => $request->badge,
+            'hook' => $request->hook,
+            'stock_status' => $request->stock_status ?? 'in_stock',
+            'stock_count' => $request->stock_count ?? 20,
+            'rating' => $request->rating ?? 4.9,
+            'reviews_count' => $request->reviews_count ?? 40,
+            'warranty_info' => $request->warranty_info ?? 'Garansi Resmi 12 Bulan Ganti Baru',
+            'package_includes' => $packageIncludes,
             'description' => $request->description,
             'features' => $request->features,
             'image_path' => $imagePath,

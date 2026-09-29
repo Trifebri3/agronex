@@ -68,27 +68,43 @@
             </div>
 
             <!-- Hook Urgency Card Right: Paket Bundling Mandiri Energi Portable (Include Panel Surya) -->
+            @php
+                $solarProd = $products->firstWhere('slug', 'agrosolar-bundle') ?? $products->first();
+                $solarName = $solarProd ? trans_db($solarProd->name) : 'Paket Tani Mandiri Portable (Include Panel Surya)';
+                $solarPrice = $solarProd->price ?? 1350000;
+                $solarOrigPrice = $solarProd->original_price ?? 2100000;
+                $solarSaving = ($solarOrigPrice && $solarOrigPrice > $solarPrice) ? ($solarOrigPrice - $solarPrice) : 0;
+                $solarRent = $solarProd->subscription_price ?? 85000;
+                $solarBadge = $solarProd->badge ?? 'Paket Rekomendasi Lapangan';
+                $solarHook = $solarProd->hook ? trans_db($solarProd->hook) : '100% Portable & Mandiri Energi di Tengah Sawah! Sudah Termasuk 1x SoilSense + 1x Panel Surya 15W + 1x Tripod Lapangan Aluminium Knock-Down + Baterai LiFePO4 + SIM IoT 1 Tahun.';
+            @endphp
             <div class="lg:col-span-4">
                 <div class="bg-white rounded-3xl p-6 border-2 border-leaf-green/30 shadow-xl relative overflow-hidden space-y-5">
                     <div class="flex items-center justify-between pb-3 border-b border-sand/50">
-                        <span class="px-3 py-1 bg-leaf-green text-white text-[10px] font-extrabold uppercase rounded-full tracking-wider">
-                            Paket Rekomendasi Lapangan
+                        <span class="px-3 py-1 bg-leaf-green text-white text-[10px] font-extrabold uppercase rounded-full tracking-wider font-mono">
+                            {{ $solarBadge }}
                         </span>
-                        <span class="text-xs font-bold text-leaf-green">Hemat 35%</span>
+                        @if($solarOrigPrice && $solarPrice && $solarOrigPrice > $solarPrice)
+                            <span class="text-xs font-bold text-leaf-green">Hemat {{ round((($solarOrigPrice - $solarPrice) / $solarOrigPrice) * 100) }}%</span>
+                        @endif
                     </div>
 
                     <div class="space-y-2">
-                        <h3 class="font-extrabold text-lg text-forest font-display">Paket Tani Mandiri Portable (Include Panel Surya)</h3>
+                        <h3 class="font-extrabold text-lg text-forest font-display">{{ $solarName }}</h3>
                         <p class="text-xs text-charcoal/70 leading-relaxed">
-                            100% Portable &amp; Mandiri Energi di Tengah Sawah! Sudah Termasuk 1x SoilSense + 1x Panel Surya 15W + 1x Tripod Lapangan Aluminium Knock-Down + Baterai LiFePO4 + SIM IoT 1 Tahun.
+                            {{ $solarHook }}
                         </p>
                     </div>
 
                     <div class="p-3.5 bg-primary-cream/40 rounded-2xl border border-sand/40 space-y-1">
-                        <div class="text-[11px] text-charcoal/50 line-through">Rp 2.100.000</div>
+                        @if($solarOrigPrice)
+                            <div class="text-[11px] text-charcoal/50 line-through">Rp {{ number_format($solarOrigPrice, 0, ',', '.') }}</div>
+                        @endif
                         <div class="flex items-baseline space-x-2">
-                            <span class="text-2xl font-black text-forest font-mono">Rp 1.350.000</span>
-                            <span class="text-[10px] font-bold text-leaf-green bg-leaf-green/10 px-2 py-0.5 rounded-full">Hemat Rp 750.000</span>
+                            <span class="text-2xl font-black text-forest font-mono">Rp {{ number_format($solarPrice, 0, ',', '.') }}</span>
+                            @if($solarSaving > 0)
+                                <span class="text-[10px] font-bold text-leaf-green bg-leaf-green/10 px-2 py-0.5 rounded-full">Hemat Rp {{ number_format($solarSaving, 0, ',', '.') }}</span>
+                            @endif
                         </div>
                     </div>
 
@@ -112,16 +128,18 @@
                     </ul>
 
                     <a 
-                        href="https://wa.me/{{ $settings['contact_whatsapp'] ?? '6285862319524' }}?text=Halo%20Agronex%20Nusantara,%20saya%20tertarik%20dengan%20Promo%20Paket%20Tani%20Mandiri%20Portable%20Include%20Panel%20Surya%20(Rp%201.350.000).%20Mohon%20info%20ketersediaan%20stok%20dan%20cara%20pemesanannya." 
+                        href="https://wa.me/{{ $settings['contact_whatsapp'] ?? '6285862319524' }}?text=Halo%20Agronex%20Nusantara,%20saya%20tertarik%20dengan%20Promo%20{{ urlencode($solarName) }}%20(Rp%20{{ number_format($solarPrice, 0, ',', '.') }}).%20Mohon%20info%20ketersediaan%20stok%20dan%20cara%20pemesanannya." 
                         target="_blank"
                         class="w-full py-3.5 bg-leaf-green hover:bg-leaf-green-dark text-white font-extrabold text-xs uppercase tracking-wider rounded-2xl text-center block shadow-md hover:shadow-lg transition-all"
                     >
                         Pesan Paket Surya via WhatsApp
                     </a>
 
+                    @if($solarRent)
                     <div class="text-[10px] text-center text-charcoal/50">
-                        Skema sewa tersedia: mulai Rp 85.000/bln untuk Poktan
+                        Skema sewa tersedia: mulai Rp {{ number_format($solarRent, 0, ',', '.') }}/bln untuk Poktan
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

@@ -229,15 +229,24 @@ class PublicController extends Controller
         $settings = Setting::pluck('value', 'key')->all();
         $products = Product::all();
         
-        // Curated Commercial Packages / Bundles (Inklusif, Portable & Solar Powered)
-        $bundles = [
-            [
-                'id' => 'solar-portable-kit',
-                'name' => 'Paket Tani Mandiri Portable (Include Panel Surya)',
-                'badge' => '100% PORTABLE • INCLUDE PANEL SURYA',
-                'tagline' => 'Stasiun telemetri mandiri energi lengkap dengan panel surya 15W + tripod lapangan knock-down + sensor SoilSense.',
-                'price' => 1350000,
-                'original_price' => 2100000,
+        // Curated Commercial Packages / Bundles (Loaded dynamically from database)
+        $bundles = [];
+        if (!empty($settings['commercial_bundles'])) {
+            $decoded = json_decode($settings['commercial_bundles'], true);
+            if (is_array($decoded) && !empty($decoded)) {
+                $bundles = $decoded;
+            }
+        }
+
+        if (empty($bundles)) {
+            $bundles = [
+                [
+                    'id' => 'solar-portable-kit',
+                    'name' => 'Paket Tani Mandiri Portable (Include Panel Surya)',
+                    'badge' => '100% PORTABLE • INCLUDE PANEL SURYA',
+                    'tagline' => 'Stasiun telemetri mandiri energi lengkap dengan panel surya 15W + tripod lapangan knock-down + sensor SoilSense.',
+                    'price' => 1350000,
+                    'original_price' => 2100000,
                 'discount' => 'HEMAT 35%',
                 'items' => [
                     '1x SoilSense Telemetry Unit IP67 Weatherproof',
@@ -292,6 +301,7 @@ class PublicController extends Controller
                 'roi_text' => 'Sangat Ringan: Biaya Sewa Tertutup Cukup dari Hasil 2 Kg Panen Cabai/Bawang!'
             ]
         ];
+        }
 
         return view('products', compact('settings', 'products', 'bundles'));
     }

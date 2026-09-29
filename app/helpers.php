@@ -59,6 +59,14 @@ if (!function_exists('compress_and_store_image')) {
                         if (imagewebp($image, null, 75)) {
                             $imageStream = ob_get_clean();
                             \Illuminate\Support\Facades\Storage::disk('public')->put($folder . '/' . $filename, $imageStream);
+
+                            // Guarantee availability in public/storage even without symlink
+                            $publicDir = public_path('storage/' . $folder);
+                            if (!is_dir($publicDir)) {
+                                @mkdir($publicDir, 0777, true);
+                            }
+                            @file_put_contents($publicDir . '/' . $filename, $imageStream);
+
                             $compressed = true;
                         } else {
                             ob_end_clean();
@@ -74,6 +82,13 @@ if (!function_exists('compress_and_store_image')) {
         if (!$compressed) {
             $originalName = uniqid('file_', true) . '.' . $file->getClientOriginalExtension();
             \Illuminate\Support\Facades\Storage::disk('public')->putFileAs($folder, $file, $originalName);
+
+            $publicDir = public_path('storage/' . $folder);
+            if (!is_dir($publicDir)) {
+                @mkdir($publicDir, 0777, true);
+            }
+            @copy($file->getRealPath(), $publicDir . '/' . $originalName);
+
             return '/storage/' . $folder . '/' . $originalName;
         }
         
