@@ -999,54 +999,7 @@ class DatabaseSeeder extends Seeder
             KnowledgeItem::create($kn);
         }
 
-        // 18. Map Markers
-        $markers = [
-            [
-                'title' => json_encode([
-                    'id' => 'Stasiun Cuaca & pH Tanah Desa Cibodas',
-                    'en' => 'Weather Station & Soil pH - Cibodas Village'
-                ]),
-                'marker_type' => 'IoT Node',
-                'latitude' => '-6.7860',
-                'longitude' => '107.0090',
-                'details' => json_encode([
-                    ['key_id' => 'Kelembapan Lahan', 'key_en' => 'Soil Moisture', 'value' => '42%'],
-                    ['key_id' => 'Tingkat pH Tanah', 'key_en' => 'Soil pH Level', 'value' => '6.2'],
-                    ['key_id' => 'Status Gateway LoRa', 'key_en' => 'LoRa Gateway Status', 'value' => 'Online']
-                ])
-            ],
-            [
-                'title' => json_encode([
-                    'id' => 'Sistem Pompa Irigasi Solar Lembah Sembalun',
-                    'en' => 'Solar Drip Irrigation Pump - Sembalun Valley'
-                ]),
-                'marker_type' => 'Solar Microgrid',
-                'latitude' => '-8.3530',
-                'longitude' => '116.5290',
-                'details' => json_encode([
-                    ['key_id' => 'Kapasitas Pompa', 'key_en' => 'Pump Capacity', 'value' => '15,000 L/Day'],
-                    ['key_id' => 'Efisiensi Energi', 'key_en' => 'Energy Efficiency', 'value' => '98%'],
-                    ['key_id' => 'Bahan Bakar Dihemat', 'key_en' => 'Fossil Fuel Saved', 'value' => '100%']
-                ])
-            ],
-            [
-                'title' => json_encode([
-                    'id' => 'Kelompok Tani Dampingan Tasikmalaya',
-                    'en' => 'Assisted Farmers Association - Tasikmalaya'
-                ]),
-                'marker_type' => 'Farmers Community',
-                'latitude' => '-7.3500',
-                'longitude' => '108.2200',
-                'details' => json_encode([
-                    ['key_id' => 'Jumlah Petani', 'key_en' => 'Active Farmers', 'value' => '120+'],
-                    ['key_id' => 'Komoditas Utama', 'key_en' => 'Main Commodity', 'value' => 'Kentang & Kubis'],
-                    ['key_id' => 'Peningkatan Hasil', 'key_en' => 'Yield Increase', 'value' => '+24%']
-                ])
-            ]
-        ];
-
-        foreach ($markers as $m) {
-            MapMarker::create($m);
-        }
+        // 18. Map Markers - 12 Verified Field Points
+        $this->call(MapMarkerSeeder::class);
     }
 }

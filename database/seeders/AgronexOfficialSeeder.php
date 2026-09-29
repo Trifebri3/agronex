@@ -922,84 +922,8 @@ class AgronexOfficialSeeder extends Seeder
             'views_count' => 340
         ]);
 
-        // 9. Map Markers - 5 Verified Field Points
-        MapMarker::truncate();
-        $markers = [
-            [
-                'title' => json_encode([
-                    'id' => 'Validasi Lahan Kp. Kiaragoong, Garut',
-                    'en' => 'Field Validation Kp. Kiaragoong, Garut'
-                ]),
-                'marker_type' => 'Field Research & Needs Assessment',
-                'latitude' => '-7.2167',
-                'longitude' => '107.9000',
-                'details' => json_encode([
-                    ['key_id' => 'Fokus Kegiatan', 'value' => 'Wawancara Ibu Karminah & pemetaan informasi harga'],
-                    ['key_id' => 'Komoditas', 'value' => 'Padi & Sayuran Hortikultura'],
-                    ['key_id' => 'Hasil Validasi', 'value' => 'Dasar perumusan modul AgroPredict']
-                ])
-            ],
-            [
-                'title' => json_encode([
-                    'id' => 'Validasi Smart Farming Pangalengan',
-                    'en' => 'Smart Farming Validation Pangalengan'
-                ]),
-                'marker_type' => 'Smart Farming & IoT Validation',
-                'latitude' => '-7.1700',
-                'longitude' => '107.5600',
-                'details' => json_encode([
-                    ['key_id' => 'Fokus Kegiatan', 'value' => 'Monitoring kondisi lahan & telemetri sensor'],
-                    ['key_id' => 'Komoditas', 'value' => 'Kentang & Sayuran Dataran Tinggi'],
-                    ['key_id' => 'Hasil Validasi', 'value' => 'Kebutuhan otomasi irigasi terukur']
-                ])
-            ],
-            [
-                'title' => json_encode([
-                    'id' => 'Demonstrasi Hardware IoT Ciamis',
-                    'en' => 'Hardware IoT Demonstration Ciamis'
-                ]),
-                'marker_type' => 'Hardware Demo & Sensor Arrays',
-                'latitude' => '-7.3275',
-                'longitude' => '108.3533',
-                'details' => json_encode([
-                    ['key_id' => 'Fokus Kegiatan', 'value' => 'Uji pembacaan sensor pH, NPK, dan kelembapan'],
-                    ['key_id' => 'Integrasi', 'value' => 'Pompa irigasi otomatis & aktuator'],
-                    ['key_id' => 'Status', 'value' => 'Prototype hardware teruji di lahan terbuka']
-                ])
-            ],
-            [
-                'title' => json_encode([
-                    'id' => 'Uji Konsep AgroPredict Tasikmalaya',
-                    'en' => 'AgroPredict Testing Tasikmalaya'
-                ]),
-                'marker_type' => 'AgroPredict Market Intelligence',
-                'latitude' => '-7.3274',
-                'longitude' => '108.2207',
-                'details' => json_encode([
-                    ['key_id' => 'Fokus Kegiatan', 'value' => 'Observasi harga di Pasar Pancasila & Cikurubuk'],
-                    ['key_id' => 'Rantai Pasok', 'value' => 'Pemetaan alur petani ke pedagang pasar'],
-                    ['key_id' => 'Engine', 'value' => 'Kalibrasi algoritma prediksi harga AgroPredict']
-                ])
-            ],
-            [
-                'title' => json_encode([
-                    'id' => 'Greenhouse Cerdas Desa Karyamukti, Garut',
-                    'en' => 'Smart Greenhouse Karyamukti, Garut'
-                ]),
-                'marker_type' => 'IoT Field Calibration',
-                'latitude' => '-7.3800',
-                'longitude' => '107.8200',
-                'details' => json_encode([
-                    ['key_id' => 'Mitra', 'value' => 'Pemerintah Desa Karyamukti & Poktan'],
-                    ['key_id' => 'Fasilitas', 'value' => 'Prototipe greenhouse cerdas terintegrasi'],
-                    ['key_id' => 'Tujuan', 'value' => 'Pengujian efisiensi air lahan dan mikroklimat']
-                ])
-            ],
-        ];
-
-        foreach ($markers as $m) {
-            MapMarker::create($m);
-        }
+        // 9. Map Markers - 12 Verified Field Points
+        $this->call(MapMarkerSeeder::class);
 
         // 10. Knowledge Items - Restructured 4 Core Pillars
         KnowledgeItem::truncate();

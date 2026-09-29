@@ -2187,10 +2187,10 @@
             const points = [
                 @foreach($mapMarkers as $marker)
                 {
-                    name: "{{ trans_db($marker->title) }}",
+                    name: {!! json_encode(trans_db($marker->title)) !!},
                     lat: {{ $marker->latitude }},
                     lng: {{ $marker->longitude }},
-                    category: "{{ $marker->marker_type }}",
+                    category: {!! json_encode($marker->marker_type) !!},
                     desc: @php
                         $desc = '';
                         if ($marker->details) {
@@ -2198,34 +2198,51 @@
                             if (is_array($details)) {
                                 $parts = [];
                                 foreach ($details as $d) {
-                                    $parts[] = ($d['key_id'] ?? '') . ': ' . ($d['value'] ?? '');
+                                    $parts[] = '<strong>' . htmlspecialchars($d['key_id'] ?? '') . ':</strong> ' . htmlspecialchars($d['value'] ?? '');
                                 }
-                                $desc = implode(' • ', $parts);
+                                $desc = implode('<br>', $parts);
                             }
                         }
-                    @endphp "{{ $desc ?: $marker->marker_type }}"
+                    @endphp {!! json_encode($desc ?: $marker->marker_type) !!}
                 },
                 @endforeach
             ];
 
+            const markersGroup = L.featureGroup();
+
             points.forEach(pt => {
+                const isPilot = pt.category && pt.category.includes('Pilot Project');
+                const isWater = pt.category && pt.category.includes('Air');
+
                 const marker = L.circleMarker([pt.lat, pt.lng], {
-                    radius: 8,
-                    fillColor: "#2F5D50",
-                    color: "#6B9E4B",
-                    weight: 2,
+                    radius: isPilot ? 11 : 8,
+                    fillColor: isPilot ? "#143823" : (isWater ? "#0284c7" : "#2F5D50"),
+                    color: isPilot ? "#84cc16" : (isWater ? "#38bdf8" : "#6B9E4B"),
+                    weight: isPilot ? 3 : 2,
                     opacity: 1,
-                    fillOpacity: 0.85
-                }).addTo(map);
+                    fillOpacity: 0.9
+                });
 
                 marker.bindPopup(`
-                    <div style="font-family: 'Inter', sans-serif; padding: 4px;">
-                        <span style="font-size: 8px; font-weight: bold; color: #6B9E4B; text-transform: uppercase;">${pt.category}</span>
-                        <h4 style="font-size: 13px; font-weight: bold; color: #2F5D50; margin: 2px 0 4px 0;">${pt.name}</h4>
-                        <p style="font-size: 11px; color: #303030; line-height: 1.4; margin: 0;">${pt.desc}</p>
+                    <div style="font-family: 'Inter', sans-serif; padding: 6px 4px; min-width: 220px; max-width: 280px;">
+                        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                            <span style="font-size: 8.5px; font-weight: 700; color: #143823; text-transform: uppercase; background: #e8f5e9; padding: 2px 7px; border-radius: 9999px; letter-spacing: 0.5px;">${pt.category}</span>
+                        </div>
+                        <h4 style="font-size: 13.5px; font-weight: 700; color: #143823; margin: 0 0 6px 0; line-height: 1.3;">${pt.name}</h4>
+                        <div style="font-size: 11px; color: #4B5563; line-height: 1.5; border-top: 1px solid #E5E7EB; padding-top: 6px;">
+                            ${pt.desc}
+                        </div>
                     </div>
                 `);
+
+                markersGroup.addLayer(marker);
             });
+
+            markersGroup.addTo(map);
+
+            if (points.length > 0) {
+                map.fitBounds(markersGroup.getBounds().pad(0.12));
+            }
         }
     });
 </script>
