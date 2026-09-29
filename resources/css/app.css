@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    
+    --color-primary-cream: #F7F4ED;
+    --color-sand: #E7DFC9;
+    --color-leaf-green: #6B9E4B;
+    --color-fresh-lime: #A8D65F;
+    --color-forest: #2F5D50;
+    --color-forest-dark: #1E3F36;
+    --color-charcoal: #303030;
+    --color-bg-base: #FCFBF8;
+}
+
+body {
+    background-color: var(--color-bg-base);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+/* Micro-animations and custom effects */
+.hover-lift {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+    transform: translateY(-4px);
+}
+
+.glassmorphism {
+    background: rgba(252, 251, 248, 0.75);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(231, 223, 201, 0.4);
+}
