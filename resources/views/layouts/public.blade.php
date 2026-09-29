@@ -159,7 +159,7 @@
                 </p>
                 <div class="text-[10px] text-forest/80 font-semibold space-y-2 pt-2 border-t border-sand/50">
                     <div class="flex items-center space-x-2">
-                        <img src="https://yotainovasi.id/yin.png" alt="YOTA INOVASI NUSANTARA Logo" class="h-4 object-contain">
+                        <img src="https://yotainovasi.id/logotulisan.png" alt="YOTA INOVASI NUSANTARA Logo" class="h-4 object-contain">
                         <a href="https://yotainovasi.id/" target="_blank" class="uppercase tracking-wider hover:text-leaf-green">Part of PT Yota Inovasi Nusantara</a>
                     </div>
                     <div class="flex items-center space-x-2">

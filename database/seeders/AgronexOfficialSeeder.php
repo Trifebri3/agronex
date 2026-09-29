@@ -110,7 +110,7 @@ class AgronexOfficialSeeder extends Seeder
             Challenge::create($ch);
         }
 
-        // 3. Products - Exactly 4 product groups
+        // 3. Products - Inklusif, Terjangkau, Portable & Komplit
         Product::truncate();
         $products = [
             [
@@ -120,39 +120,39 @@ class AgronexOfficialSeeder extends Seeder
                 ]),
                 'slug' => 'soilsense',
                 'sku' => 'AGX-SL26',
-                'badge' => 'BEST SELLER • HEMAT 24%',
-                'price' => 1850000,
-                'original_price' => 2450000,
-                'subscription_price' => 125000,
+                'badge' => 'PORTABLE & INKLUSIF • HEMAT 30%',
+                'price' => 780000,
+                'original_price' => 1250000,
+                'subscription_price' => 45000,
                 'rating' => 4.9,
                 'reviews_count' => 52,
                 'stock_status' => 'in_stock',
-                'stock_count' => 18,
+                'stock_count' => 25,
                 'warranty_info' => 'Garansi Resmi 12 Bulan Ganti Baru + Free Pendampingan',
                 'hook' => json_encode([
-                    'id' => 'Stop buang jutaan rupiah untuk pupuk kimia yang salah takaran! Pantau pH, NPK, dan kelembaban tanah real-time langsung dari HP Anda. Balik modal dalam 1 siklus panen!',
-                    'en' => 'Stop wasting millions on misplaced fertilizer doses! Track soil pH, NPK, and moisture in real time directly from your phone. Reclaim ROI in a single harvest cycle!'
+                    'id' => 'Alat ukur tanah portable mandiri energi! Stop buang jutaan rupiah untuk pupuk kimia yang salah takaran. Pantau pH, NPK, dan kelembapan tanah kapan saja langsung dari HP Anda. Balik modal dalam 1 siklus panen!',
+                    'en' => 'Portable solar-ready soil sensor! Stop wasting millions on misplaced fertilizer doses. Track pH, NPK, and soil moisture in real-time on your phone. ROI in a single harvest cycle!'
                 ]),
                 'package_includes' => json_encode([
-                    '1x Unit SoilSense IoT Transmitter IP67 Weatherproof',
+                    '1x Unit SoilSense Portable IoT Transmitter IP67 Weatherproof',
                     '1x Multi-Parameter Soil Probe Stainless Steel 316 (Anti-Karat)',
-                    '1x Mini Solar Panel 5W + Baterai Lithium (Daya Tahan 30 Hari Tanpa Sinar)',
+                    '1x Baterai Lithium Rechargeable (Daya Tahan 30 Hari)',
                     '1x Kartu SIM IoT Telkomsel Kuota 1 Tahun Aktif',
                     'Akses Aplikasi Mobile Agronex Android & Cloud Dashboard',
                     'Sertifikat Kalibrasi Tanah Tropis Resmi'
                 ]),
                 'description' => json_encode([
-                    'id' => 'Perangkat untuk membaca kondisi tanah seperti pH, NPK, kelembapan, dan parameter terkait sesuai konfigurasi sensor.',
-                    'en' => 'Device to read soil conditions including pH, NPK, moisture, and related parameters based on sensor configuration.'
+                    'id' => 'Perangkat telemetri portable untuk membaca kondisi tanah seperti pH, NPK, kelembapan, dan parameter kesuburan secara praktis.',
+                    'en' => 'Portable device to read soil conditions including pH, NPK, moisture, and fertility parameters based on sensor configuration.'
                 ]),
                 'features' => json_encode([
-                    'id' => "Kategori: FIELD SENSING\nPenggunaan: pH, NPK, kelembapan tanah\nTujuan: Memahami kondisi tanah sebelum mengambil keputusan budidaya\nStatus: PROTOTYPE / FIELD TESTING",
-                    'en' => "Category: FIELD SENSING\nUsage: pH, NPK, soil moisture\nPurpose: Understand soil condition before cultivation decisions\nStatus: PROTOTYPE / FIELD TESTING"
+                    'id' => "Kategori: FIELD SENSING & PORTABLE\nPenggunaan: pH, NPK, kelembapan tanah\nTujuan: Memahami kondisi tanah sebelum mengambil keputusan budidaya\nKelebihan: 100% Portable, ringan, plug & play\nStatus: READY STOCK / COMMERCIALLY AVAILABLE",
+                    'en' => "Category: FIELD SENSING & PORTABLE\nUsage: pH, NPK, soil moisture\nPurpose: Understand soil condition before cultivation decisions\nStatus: READY STOCK / COMMERCIALLY AVAILABLE"
                 ]),
                 'image_path' => '/konten/WhatsApp Image 2026-07-27 at 23.37.12.jpeg',
                 'detail_content' => json_encode([
-                    'id' => "SoilSense membaca parameter kondisi tanah secara presisi langsung di zona perakaran tanaman. Dengan mengetahui nilai pH tanah aktual serta konsentrasi nitrogen (N), fosfor (P), dan kalium (K), petani dapat mengalibrasi pemupukan secara tepat dosis dan tidak lagi bergantung pada perkiraan semata.\n\n• Kategori: FIELD SENSING\n• Penggunaan: pH, NPK, soil moisture\n• Tujuan: Memahami kondisi tanah sebelum mengambil keputusan budidaya\n• Status: PROTOTYPE / FIELD TESTING",
-                    'en' => "SoilSense reads accurate soil parameters directly in the crop root zone. By tracking pH and NPK concentrations, farmers can dose fertilizers accurately based on real telemetry.\n\n• Category: FIELD SENSING\n• Usage: pH, NPK, soil moisture\n• Purpose: Understand soil conditions before making cultivation decisions\n• Status: PROTOTYPE / FIELD TESTING"
+                    'id' => "SoilSense membaca parameter kondisi tanah secara presisi langsung di zona perakaran tanaman. Dengan mengetahui nilai pH tanah aktual serta konsentrasi nitrogen (N), fosfor (P), dan kalium (K), petani dapat mengalibrasi pemupukan secara tepat dosis dan tidak lagi bergantung pada perkiraan semata.\n\n• Kategori: FIELD SENSING & PORTABLE\n• Penggunaan: pH, NPK, soil moisture\n• Tujuan: Memahami kondisi tanah sebelum mengambil keputusan budidaya\n• Kelebihan: Portable, ringan, mudah dipindah antar petak\n• Status: READY STOCK / COMMERCIALLY AVAILABLE",
+                    'en' => "SoilSense reads accurate soil parameters directly in the crop root zone. By tracking pH and NPK concentrations, farmers can dose fertilizers accurately based on real telemetry.\n\n• Category: FIELD SENSING & PORTABLE\n• Usage: pH, NPK, soil moisture\n• Purpose: Understand soil conditions before making cultivation decisions\n• Status: READY STOCK / COMMERCIALLY AVAILABLE"
                 ])
             ],
             [
@@ -162,39 +162,39 @@ class AgronexOfficialSeeder extends Seeder
                 ]),
                 'slug' => 'watersense',
                 'sku' => 'AGX-WT26',
-                'badge' => 'EFISIENSI AIR • HEMAT 21%',
-                'price' => 1650000,
-                'original_price' => 2100000,
-                'subscription_price' => 110000,
+                'badge' => 'EFISIENSI AIR • HEMAT 35%',
+                'price' => 690000,
+                'original_price' => 1100000,
+                'subscription_price' => 39000,
                 'rating' => 4.8,
                 'reviews_count' => 39,
                 'stock_status' => 'in_stock',
-                'stock_count' => 22,
+                'stock_count' => 28,
                 'warranty_info' => 'Garansi Resmi 12 Bulan Ganti Baru',
                 'hook' => json_encode([
                     'id' => 'Cegah busuk akar dan hemat air hingga 35%! Siram hanya saat tanaman Anda benar-benar membutuhkan air berdasarkan data volumetrik akurat.',
                     'en' => 'Prevent root rot and conserve up to 35% irrigation water! Water your crops only when they genuinely require hydration.'
                 ]),
                 'package_includes' => json_encode([
-                    '1x Unit WaterSense Telemetry Controller IP67',
+                    '1x Unit WaterSense Portable Telemetry Controller IP67',
                     '1x Volumetric Water Content (VWC) Soil Moisture Probe',
                     '1x Digital Flow Meter Interface Connector',
-                    '1x Solar Rechargeable Power Module',
+                    '1x Baterai Lithium Daya Tahan Tinggi',
                     '1x Kartu SIM IoT Aktif 1 Tahun',
-                    'Aplikasi Pengatur Jadwal & Alert Irigasi Otomatis'
+                    'Aplikasi Pengatur Jadwal & Alert Irigasi Otomatis via WhatsApp'
                 ]),
                 'description' => json_encode([
-                    'id' => 'Monitoring kondisi kelembapan dan kualitas air untuk membantu keputusan pengairan.',
+                    'id' => 'Monitoring kondisi kelembapan volumetrik tanah dan kualitas air untuk membantu keputusan pengairan presisi.',
                     'en' => 'Monitoring soil moisture and water quality parameters to assist irrigation decisions.'
                 ]),
                 'features' => json_encode([
-                    'id' => "Kategori: FIELD SENSING\nParameter: Volumetrik air tanah, kualitas air irigasi\nTujuan: Mengurangi penyiraman berdasarkan perkiraan\nStatus: DEVELOPMENT / FIELD VALIDATION",
-                    'en' => "Category: FIELD SENSING\nParameters: Volumetric soil water content, irrigation water metrics\nPurpose: Reduce estimation-based watering\nStatus: DEVELOPMENT / FIELD VALIDATION"
+                    'id' => "Kategori: FIELD SENSING\nParameter: Volumetrik air tanah, kualitas air irigasi\nTujuan: Mengurangi penyiraman berlebih & mencegah pembusukan akar\nStatus: READY STOCK / COMMERCIALLY AVAILABLE",
+                    'en' => "Category: FIELD SENSING\nParameters: Volumetric soil water content, irrigation water metrics\nPurpose: Reduce estimation-based watering\nStatus: READY STOCK / COMMERCIALLY AVAILABLE"
                 ]),
                 'image_path' => '/konten/WhatsApp Image 2026-07-27 at 23.37.19.jpeg',
                 'detail_content' => json_encode([
-                    'id' => "WaterSense dirancang untuk membantu efisiensi penggunaan air lahan secara signifikan. Sensor mengukur kelembapan volumetrik tanah secara berkala sehingga jadwal penyiraman hanya diaktifkan saat tanaman benar-benar membutuhkan air, mencegah stres air maupun kejenuhan air berlebih.\n\n• Kategori: FIELD SENSING\n• Penggunaan: Monitoring kelembapan tanah & debit air\n• Tujuan: Mengurangi penyiraman berdasarkan perkiraan\n• Status: DEVELOPMENT / FIELD VALIDATION",
-                    'en' => "WaterSense is engineered to optimize water usage. Regular moisture tracking ensures irrigation activates only when crops genuinely need hydration.\n\n• Category: FIELD SENSING\n• Usage: Soil moisture & water flow monitoring\n• Purpose: Reduce guess-based watering\n• Status: DEVELOPMENT / FIELD VALIDATION"
+                    'id' => "WaterSense dirancang untuk membantu efisiensi penggunaan air lahan secara signifikan. Sensor mengukur kelembapan volumetrik tanah secara berkala sehingga jadwal penyiraman hanya diaktifkan saat tanaman benar-benar membutuhkan air, mencegah stres air maupun kejenuhan air berlebih.\n\n• Kategori: FIELD SENSING\n• Penggunaan: Monitoring kelembapan tanah & debit air\n• Tujuan: Mengurangi penyiraman berdasarkan perkiraan\n• Status: READY STOCK / COMMERCIALLY AVAILABLE",
+                    'en' => "WaterSense is engineered to optimize water usage. Regular moisture tracking ensures irrigation activates only when crops genuinely need hydration.\n\n• Category: FIELD SENSING\n• Usage: Soil moisture & water flow monitoring\n• Purpose: Reduce guess-based watering\n• Status: READY STOCK / COMMERCIALLY AVAILABLE"
                 ])
             ],
             [
@@ -204,59 +204,190 @@ class AgronexOfficialSeeder extends Seeder
                 ]),
                 'slug' => 'envirosense',
                 'sku' => 'AGX-EV26',
-                'badge' => 'EARLY WARNING • HEMAT 20%',
-                'price' => 2250000,
-                'original_price' => 2800000,
-                'subscription_price' => 150000,
+                'badge' => 'EARLY WARNING • IKLIM MIKRO',
+                'price' => 850000,
+                'original_price' => 1350000,
+                'subscription_price' => 49000,
                 'rating' => 4.9,
                 'reviews_count' => 34,
                 'stock_status' => 'in_stock',
-                'stock_count' => 14,
+                'stock_count' => 18,
                 'warranty_info' => 'Garansi Resmi 12 Bulan Ganti Baru',
                 'hook' => json_encode([
-                    'id' => 'Deteksi dini ancaman serangan jamur & hama akibat kelembaban ekstrem sebelum merusak seluruh tanaman Anda. Notifikasi otomatis ke WhatsApp!',
+                    'id' => 'Deteksi dini ancaman serangan jamur & hama akibat kelembapan ekstrem sebelum merusak seluruh tanaman Anda. Notifikasi otomatis ke WhatsApp!',
                     'en' => 'Detect fungus and pest outbreaks driven by extreme microclimate shifts before they destroy your crop canopy. Instant WhatsApp alerts!'
                 ]),
                 'package_includes' => json_encode([
-                    '1x EnviroSense Weather Station Node IP66',
+                    '1x EnviroSense Microclimate Weather Node IP66',
                     '1x Sensor Suhu & Kelembaban Relatif (RH) High-Precision',
                     '1x Sensor Intensitas Radiasi Matahari (Lux/PAR)',
-                    '1x Bracket Mounting Tiang Kanopi Lahan',
+                    '1x Bracket Mounting Portable Tiang Kanopi Lahan',
                     'Modul Komunikasi Seluler + Antena Penguat Sinyal',
-                    'Mesin Notifikasi Peringatan Dini via WhatsApp'
+                    'Mesin Notifikasi Peringatan Dini Otomatis via WhatsApp'
                 ]),
                 'description' => json_encode([
-                    'id' => 'Monitoring kondisi lingkungan dan iklim mikro di sekitar tanaman.',
+                    'id' => 'Monitoring kondisi lingkungan dan iklim mikro di sekitar kanopi tanaman untuk pencegahan dini hama dan penyakit.',
                     'en' => 'Monitoring environmental conditions and microclimate surrounding the crop.'
                 ]),
                 'features' => json_encode([
-                    'id' => "Kategori: FIELD SENSING\nParameter: Suhu udara, kelembapan relatif, sinyal cuaca mikro\nTujuan: Memahami kondisi lingkungan yang memengaruhi tanaman\nStatus: DEVELOPMENT / FIELD VALIDATION",
-                    'en' => "Category: FIELD SENSING\nParameters: Ambient temperature, relative humidity, micro-weather signals\nPurpose: Understand environmental factors affecting crops\nStatus: DEVELOPMENT / FIELD VALIDATION"
+                    'id' => "Kategori: FIELD SENSING\nParameter: Suhu udara, kelembapan relatif, sinyal cuaca mikro\nTujuan: Memahami kondisi lingkungan yang memengaruhi tanaman & early warning penyakit\nStatus: READY STOCK / COMMERCIALLY AVAILABLE",
+                    'en' => "Category: FIELD SENSING\nParameters: Ambient temperature, relative humidity, micro-weather signals\nPurpose: Understand environmental factors affecting crops\nStatus: READY STOCK / COMMERCIALLY AVAILABLE"
                 ]),
                 'image_path' => '/konten/WhatsApp Image 2026-07-27 at 23.37.16.jpeg',
                 'detail_content' => json_encode([
-                    'id' => "EnviroSense membaca dinamika iklim mikro di area kanopi tanaman seperti fluktuasi suhu udara, kelembapan sekitar, dan intensitas radiasi matahari. Data ini menjadi peringatan dini bagi potensi serangan hama atau penyakit yang dipicu oleh kelembapan udara tinggi.\n\n• Kategori: FIELD SENSING\n• Parameter: Temperature, humidity, weather-related environmental signals\n• Tujuan: Memahami kondisi lingkungan yang memengaruhi tanaman\n• Status: DEVELOPMENT / FIELD VALIDATION",
-                    'en' => "EnviroSense tracks canopy microclimate variables including air temperatures, ambient humidity, and solar radiation. Provides early warning signals for humidity-related crop diseases.\n\n• Category: FIELD SENSING\n• Parameters: Temperature, humidity, weather signals\n• Purpose: Understand crop environment dynamics\n• Status: DEVELOPMENT / FIELD VALIDATION"
+                    'id' => "EnviroSense membaca dinamika iklim mikro di area kanopi tanaman seperti fluktuasi suhu udara, kelembapan sekitar, dan intensitas radiasi matahari. Data ini menjadi peringatan dini bagi potensi serangan hama atau penyakit yang dipicu oleh kelembapan udara tinggi.\n\n• Kategori: FIELD SENSING\n• Parameter: Temperature, humidity, weather-related environmental signals\n• Tujuan: Memahami kondisi lingkungan yang memengaruhi tanaman\n• Status: READY STOCK / COMMERCIALLY AVAILABLE",
+                    'en' => "EnviroSense tracks canopy microclimate variables including air temperatures, ambient humidity, and solar radiation. Provides early warning signals for humidity-related crop diseases.\n\n• Category: FIELD SENSING\n• Parameters: Temperature, humidity, weather signals\n• Purpose: Understand crop environment dynamics\n• Status: READY STOCK / COMMERCIALLY AVAILABLE"
                 ])
             ],
             [
                 'name' => json_encode([
-                    'id' => 'Terra',
-                    'en' => 'Terra'
+                    'id' => 'HydroSense (Smart Hidroponik Komplit)',
+                    'en' => 'HydroSense (Smart Hydroponics Kit)'
+                ]),
+                'slug' => 'hydrosense',
+                'sku' => 'AGX-HY26',
+                'badge' => 'SMART HIDROPONIK • AUTOMATION KIT',
+                'price' => 1050000,
+                'original_price' => 1650000,
+                'subscription_price' => 65000,
+                'rating' => 4.9,
+                'reviews_count' => 28,
+                'stock_status' => 'in_stock',
+                'stock_count' => 16,
+                'warranty_info' => 'Garansi Resmi 12 Bulan Tukar Baru',
+                'hook' => json_encode([
+                    'id' => 'Paket komplit otomasi & monitoring hidroponik modern! Pantau EC/TDS nutrisi, pH air, dan suhu larutan 24 jam nonstop. Dilengkapi otomasi pompa dosing nutrisi otomatis tanpa khawatir bibit mati!',
+                    'en' => 'Complete automation & monitoring kit for modern hydroponics! Track nutrient EC/TDS, water pH, and temperature 24/7 with automatic dosing pump control.'
+                ]),
+                'package_includes' => json_encode([
+                    '1x HydroMaster Smart Controller Box dengan Layar Digital OLED',
+                    '1x Industrial Grade Submersible EC/TDS Nutrient Probe',
+                    '1x High-Accuracy Glass/Gel pH Sensor Probe',
+                    '1x Sensor Suhu Air Waterproof Stainless Steel',
+                    '2x Pompa Peristaltik Dosing Otomatis (Nutrisi A & B)',
+                    'Konektivitas WiFi + Bluetooth & Cloud App Dashboard',
+                    'Buku Panduan Setting Dosis Nutrisi Komoditas Sayur'
+                ]),
+                'description' => json_encode([
+                    'id' => 'Perangkat monitoring dan otomasi nutrisi hidroponik terintegrasi (EC/TDS, pH, suhu air, dan kontrol pompa dosing otomatis).',
+                    'en' => 'Integrated hydroponics nutrient monitoring and automation kit (EC/TDS, pH, water temp, and automated dosing pumps).'
+                ]),
+                'features' => json_encode([
+                    'id' => "Kategori: SMART HIDROPONIK\nParameter: EC/TDS Nutrisi, pH Larutan, Suhu Air, Level Tandon\nOtomasi: 2x Pompa Dosing Nutrisi A/B Otomatis\nTujuan: Memaksimalkan laju tumbuh & efisiensi larutan nutrisi hidroponik\nStatus: READY STOCK / COMMERCIALLY AVAILABLE",
+                    'en' => "Category: SMART HYDROPONICS\nParameters: EC/TDS, pH, water temperature, tank levels\nAutomation: 2x auto dosing pumps\nStatus: READY STOCK / COMMERCIALLY AVAILABLE"
+                ]),
+                'image_path' => '/images/hydrosense.jpg',
+                'detail_content' => json_encode([
+                    'id' => "HydroSense dirancang khusus untuk instalasi hidroponik indoor, greenhouse, NFT, DFT, dan Dutch Bucket. Memadukan sensor EC/TDS industri dan sensor pH dengan aktuator pompa dosing peristaltik otonom. Saat konsentrasi nutrisi berkurang atau pH bergeser dari ambang optimal komoditas, sistem otomatis menginjeksi nutrisi dan mengoreksi pH secara presisi tanpa perlu pengecekan manual yang memakan waktu.\n\n• Kategori: SMART HIDROPONIK\n• Parameter: EC, TDS (ppm), pH, Water Temp\n• Otomasi: Dosing Pump A&B terintegrasi\n• Garansi: 12 Bulan Ganti Baru",
+                    'en' => "HydroSense is engineered for greenhouse, NFT, and DFT hydroponic operations. Combines industrial EC and pH probes with automated peristaltic dosing pumps."
+                ])
+            ],
+            [
+                'name' => json_encode([
+                    'id' => 'AgroCore Central CPU (Smart Gateway)',
+                    'en' => 'AgroCore Central CPU (Smart Gateway)'
+                ]),
+                'slug' => 'agrocore-cpu',
+                'sku' => 'AGX-CPU26',
+                'badge' => 'CPU CERDAS • MULTI-SENSOR GATEWAY',
+                'price' => 1150000,
+                'original_price' => 1850000,
+                'subscription_price' => 75000,
+                'rating' => 5.0,
+                'reviews_count' => 31,
+                'stock_status' => 'in_stock',
+                'stock_count' => 14,
+                'warranty_info' => 'Garansi Resmi 12 Bulan Tukar Baru',
+                'hook' => json_encode([
+                    'id' => 'Otak sentral cerdas untuk integrasikan semua alat, sensor, dan pompa di kebun Anda! Mendukung 4G LTE, LoRa, WiFi, RS485 Modbus, dan relay pompa. Bekerja otonom bahkan saat internet offline!',
+                    'en' => 'Central intelligent IoT CPU to integrate all field sensors, telemetry modules, and solenoid irrigation pumps! Operates autonomously even during network outages.'
+                ]),
+                'package_includes' => json_encode([
+                    '1x AgroCore Industrial Dual-Core Edge Controller (Agri-Edge Pro)',
+                    '1x Enclosure Box Outdoor IP66 Weatherproof Clear-Cover',
+                    'Dual Antena High-Gain (4G/LTE + LoRa Long Range)',
+                    '4x Terminal Port Analog (ADC) & 4x Digital Input',
+                    '1x Bus RS485 Modbus RTU (Hubungkan hingga 16 sensor sekaligus)',
+                    '4x Relay Output 240VAC/10A untuk Pompa Air & Solenoid Valve',
+                    'Dual Power: DC Solar 12V/24V + AC Adaptor Backup',
+                    'Protokol Terbuka MQTT & REST API'
+                ]),
+                'description' => json_encode([
+                    'id' => 'CPU sentral dan gateway cerdas berstandar industri untuk mengintegrasikan puluhan sensor, aktuator pompa irigasi, dan telemetri nirkabel.',
+                    'en' => 'Industrial smart central CPU and edge gateway to integrate multiple field sensors, actuators, and wireless telemetries.'
+                ]),
+                'features' => json_encode([
+                    'id' => "Kategori: CPU & CONTROLLER CERDAS\nKonektivitas: 4G LTE, LoRa, WiFi, RS485 Modbus, ADC\nOutput: 4x Relay Aktuator Pompa/Valve 240VAC 10A\nKelebihan: Bekerja otonom tanpa internet (Edge Offline Logic)\nStatus: READY STOCK / COMMERCIALLY AVAILABLE",
+                    'en' => "Category: CENTRAL CPU & CONTROLLER\nConnectivity: 4G LTE, LoRa, WiFi, RS485 Modbus\nOutput: 4x Relay actuators\nStatus: READY STOCK / COMMERCIALLY AVAILABLE"
+                ]),
+                'image_path' => '/images/agrocore_cpu.jpg',
+                'detail_content' => json_encode([
+                    'id' => "AgroCore Central CPU adalah otak komputasi lapangan mandiri yang menghubungkan seluruh ekosistem pertanian cerdas. Dengan terminal RS485 Modbus, terminal analog ADC, dan relay beban tinggi, CPU ini mampu membaca sensor tanah, air, cuaca, serta langsung memerintahkan pompa air menyala saat ambang batas tanah kering tercapai secara otonom. Mendukung LoRa jarak jauh hingga 5 km dan 4G LTE untuk sinkronisasi ke cloud platform AGRONEX.\n\n• Kategori: CENTRAL CPU & CONTROLLER\n• Port: RS485, 4x ADC, 4x Digital, 4x Relay Out\n• Daya: Solar DC 12-24V / AC 220V\n• Garansi: 12 Bulan Tukar Baru",
+                    'en' => "AgroCore Central CPU is an edge computing field controller that bridges wireless sensor nodes and actuator pumps autonomously."
+                ])
+            ],
+            [
+                'name' => json_encode([
+                    'id' => 'AgroSolar Portable Station (Include Panel Surya)',
+                    'en' => 'AgroSolar Portable Station (Solar Kit Bundle)'
+                ]),
+                'slug' => 'agrosolar-bundle',
+                'sku' => 'AGX-SLR26',
+                'badge' => 'BUNDLING KOMPLIT • INCLUDE PANEL SURYA',
+                'price' => 1350000,
+                'original_price' => 2100000,
+                'subscription_price' => 85000,
+                'rating' => 5.0,
+                'reviews_count' => 47,
+                'stock_status' => 'in_stock',
+                'stock_count' => 20,
+                'warranty_info' => 'Garansi Resmi 12 Bulan Tukar Baru',
+                'hook' => json_encode([
+                    'id' => '100% PORTABLE & MANDIRI ENERGI! Bundling paket komplit SoilSense + Panel Surya Monocrystalline + Tripod Lapangan Ringan. Pasang di tengah sawah mana saja tanpa repot tarik kabel PLN atau bensin genset!',
+                    'en' => '100% PORTABLE & SOLAR POWERED! Complete bundle includes SoilSense sensor + monocrystalline solar panel + lightweight field tripod. Zero wiring needed!'
+                ]),
+                'package_includes' => json_encode([
+                    '1x Unit SoilSense IoT Telemetry Controller IP67 Weatherproof',
+                    '1x Panel Surya Monocrystalline 15W High-Efficiency',
+                    '1x Tripod Aluminium Lapangan Portable (Ringan, Kokoh & Knock-down)',
+                    '1x Built-in Baterai LiFePO4 (Daya cadangan 30 hari tanpa sinar)',
+                    '1x Stainless Steel Multi-Parameter Soil Probe (pH, NPK, Moisture)',
+                    '1x Kartu SIM IoT Telkomsel Kuota 1 Tahun Aktif',
+                    '1x Tas Jinjing Lapangan Portable Anti-Air',
+                    'Aplikasi Mobile Monitoring Petani 24/7'
+                ]),
+                'description' => json_encode([
+                    'id' => 'Stasiun telemetri lahan portable mandiri energi lengkap dengan panel surya dan tripod lapangan, siap pasang di tengah sawah terbuka.',
+                    'en' => 'Portable solar-powered agricultural telemetry station with solar panel and field tripod, ready for open farm deployment.'
+                ]),
+                'features' => json_encode([
+                    'id' => "Kategori: BUNDLING MANDIRI ENERGI\nFitur: 100% Portable, Knock-down Tripod, Include Solar Panel 15W\nParameter: pH, NPK, Kelembapan Tanah, Telemetri Realtime\nDaya Tahan: 30 hari tanpa sinar matahari (Baterai LiFePO4)\nStatus: READY STOCK / COMMERCIALLY AVAILABLE",
+                    'en' => "Category: SOLAR POWERED BUNDLE\nFeatures: 100% Portable, tripod, monocrystalline solar panel 15W\nStatus: READY STOCK / COMMERCIALLY AVAILABLE"
+                ]),
+                'image_path' => '/images/solar_bundle.jpg',
+                'detail_content' => json_encode([
+                    'id' => "Paket AgroSolar Portable Station menjawab kendala terbesar petani di lahan terbuka: ketiadaan sumber listrik PLN. Dilengkapi panel surya monocrystalline efisiensi tinggi dan tripod aluminium knock-down yang sangat ringan, paket ini memungkinkan petani memindahkan alat antar petak sawah dengan mudah. Tidak butuh genset bensin, ramah lingkungan, dan hemat biaya operasional harian 100%.\n\n• Kategori: BUNDLING MANDIRI ENERGI\n• Termasuk: Panel Surya 15W + Tripod Lapangan + Sensor SoilSense\n• Portabilitas: Ringan & knock-down, mudah dipindahkan\n• Garansi: 12 Bulan Ganti Baru",
+                    'en' => "AgroSolar Portable Station eliminates the need for grid power in open fields with a 15W solar panel and lightweight field tripod."
+                ])
+            ],
+            [
+                'name' => json_encode([
+                    'id' => 'Terra (Handheld Soil Scanner)',
+                    'en' => 'Terra (Handheld Soil Scanner)'
                 ]),
                 'slug' => 'terra',
                 'sku' => 'AGX-TR26',
-                'badge' => 'SOIL INTELLIGENCE • HANDHELD',
-                'price' => 4950000,
-                'original_price' => 6200000,
-                'subscription_price' => 0,
+                'badge' => 'SOIL SCANNER • PORTABLE & CEPAT',
+                'price' => 2150000,
+                'original_price' => 3200000,
+                'subscription_price' => 120000,
                 'rating' => 5.0,
                 'reviews_count' => 21,
                 'stock_status' => 'in_stock',
-                'stock_count' => 9,
+                'stock_count' => 11,
                 'warranty_info' => 'Garansi VIP 18 Bulan Tukar Baru',
                 'hook' => json_encode([
-                    'id' => 'Uji kesuburan tanah 1 petak dalam 3 menit langsung di tempat tanpa tunggu hasil lab berminggu-minggu. Wajib untuk agronomis & kelompok tani maju!',
+                    'id' => 'Uji kesuburan tanah 1 petak dalam 3 menit langsung di tempat tanpa tunggu hasil lab berminggu-minggu. Portabel, mudah dibawa keliling petak sawah oleh penyuluh dan kelompok tani!',
                     'en' => 'Test soil fertility for an entire plot in 3 minutes on-site without waiting weeks for lab results. Essential for agronomists and farmer groups!'
                 ]),
                 'package_includes' => json_encode([
@@ -268,17 +399,17 @@ class AgronexOfficialSeeder extends Seeder
                     'Buku Panduan Diagnostik & Kartu Garansi VIP'
                 ]),
                 'description' => json_encode([
-                    'id' => 'Perangkat soil scanning untuk membantu memperoleh gambaran kondisi tanah secara lebih praktis.',
-                    'en' => 'Soil scanning device designed to obtain a comprehensive soil condition overview practically.'
+                    'id' => 'Perangkat soil scanning handheld portable untuk memperoleh gambaran kesuburan tanah secara cepat dan praktis di lapangan.',
+                    'en' => 'Portable handheld soil scanning device designed to obtain a rapid soil condition overview in the field.'
                 ]),
                 'features' => json_encode([
-                    'id' => "Kategori: SOIL INTELLIGENCE\nParameter: Profil pemindaian cepat karakteristik tanah\nTujuan: Mempercepat pengumpulan data kondisi lahan\nStatus: PROTOTYPE / DEVELOPMENT",
-                    'en' => "Category: SOIL INTELLIGENCE\nParameters: Rapid diagnostic soil profiling\nPurpose: Accelerate land condition data collection\nStatus: PROTOTYPE / DEVELOPMENT"
+                    'id' => "Kategori: SOIL INTELLIGENCE & PORTABLE\nParameter: Profil pemindaian cepat karakteristik tanah dalam 3 menit\nTujuan: Mempercepat pengumpulan data kondisi lahan & keputusan pupuk\nStatus: READY STOCK / COMMERCIALLY AVAILABLE",
+                    'en' => "Category: SOIL INTELLIGENCE & PORTABLE\nParameters: Rapid diagnostic soil profiling in 3 minutes\nStatus: READY STOCK / COMMERCIALLY AVAILABLE"
                 ]),
                 'image_path' => '/konten/WhatsApp Image 2026-07-27 at 23.37.12 (1).jpeg',
                 'detail_content' => json_encode([
-                    'id' => "Terra merupakan instrumen soil scanner portabel untuk pengujian cepat di lapangan. Memungkinkan petugas lapangan dan kelompok tani memetakan variabilitas tanah antarsektor dalam hitungan menit tanpa harus menunggu hasil laboratorium berminggu-minggu.\n\n• Kategori: SOIL INTELLIGENCE\n• Penggunaan: Pemindaian cepat profil tanah\n• Tujuan: Mempercepat pengumpulan data kondisi lahan\n• Status: PROTOTYPE / DEVELOPMENT",
-                    'en' => "Terra is a portable soil scanning instrument for rapid field diagnostics. Enables field teams and farmers to survey soil heterogeneity in minutes.\n\n• Category: SOIL INTELLIGENCE\n• Usage: Fast soil profile scanning\n• Purpose: Speed up land data gathering\n• Status: PROTOTYPE / DEVELOPMENT"
+                    'id' => "Terra merupakan instrumen soil scanner portabel untuk pengujian cepat di lapangan. Memungkinkan petugas lapangan dan kelompok tani memetakan variabilitas tanah antarsektor dalam hitungan menit tanpa harus menunggu hasil laboratorium berminggu-minggu.\n\n• Kategori: SOIL INTELLIGENCE & PORTABLE\n• Penggunaan: Pemindaian cepat profil tanah\n• Tujuan: Mempercepat pengumpulan data kondisi lahan\n• Status: READY STOCK / COMMERCIALLY AVAILABLE",
+                    'en' => "Terra is a portable soil scanning instrument for rapid field diagnostics. Enables field teams and farmers to survey soil heterogeneity in minutes."
                 ])
             ],
         ];
@@ -287,11 +418,11 @@ class AgronexOfficialSeeder extends Seeder
             Product::create($p);
         }
 
-        // 4. Team - Exactly 5 Pitch Deck Members
+        // 4. Team - 9 Key Leadership & Operations Members
         TeamMember::truncate();
         $team = [
             [
-                'name' => 'Tri Febriansah',
+                'name' => json_encode(['id' => 'Tri Febriansah', 'en' => 'Tri Febriansah']),
                 'role' => json_encode(['id' => 'CEO', 'en' => 'CEO']),
                 'category' => 'Executive',
                 'photo_path' => '/storage/uploads/team/img_6a68059581d308.23776729.webp',
@@ -309,10 +440,10 @@ class AgronexOfficialSeeder extends Seeder
                 'order_num' => 1
             ],
             [
-                'name' => 'Rifki Ilhami Fauzi',
+                'name' => json_encode(['id' => 'Rifki Ilhami Fauzi', 'en' => 'Rifki Ilhami Fauzi']),
                 'role' => json_encode(['id' => 'COO', 'en' => 'COO']),
                 'category' => 'Operations',
-                'photo_path' => '/storage/uploads/team/img_6a680409b98134.07916752.webp',
+                'photo_path' => '/storage/uploads/team/img_6abc06c332ab42.47506760.webp',
                 'linkedin_url' => 'https://www.linkedin.com/in/rifki-ilhami-fauzi/',
                 'email' => 'rifki.ilhami@agronex.id',
                 'bio' => json_encode([
@@ -327,10 +458,10 @@ class AgronexOfficialSeeder extends Seeder
                 'order_num' => 2
             ],
             [
-                'name' => 'Shandy Muhammad Yusuf',
+                'name' => json_encode(['id' => 'Shandy Muhammad Yusuf', 'en' => 'Shandy Muhammad Yusuf']),
                 'role' => json_encode(['id' => 'CTO', 'en' => 'CTO']),
                 'category' => 'Technology',
-                'photo_path' => null,
+                'photo_path' => '/storage/uploads/team/img_6abc06d9ecfa83.76270631.webp',
                 'linkedin_url' => 'https://www.linkedin.com/in/shandy-muhammad-yusuf/',
                 'email' => 'shandy.yusuf@agronex.id',
                 'bio' => json_encode([
@@ -345,10 +476,10 @@ class AgronexOfficialSeeder extends Seeder
                 'order_num' => 3
             ],
             [
-                'name' => 'Eva Salsabila',
+                'name' => json_encode(['id' => 'Eva Salsabila', 'en' => 'Eva Salsabila']),
                 'role' => json_encode(['id' => 'Social Impact & Community Lead', 'en' => 'Social Impact & Community Lead']),
                 'category' => 'Community',
-                'photo_path' => null,
+                'photo_path' => '/storage/uploads/team/img_6abc06912680e5.91509090.webp',
                 'linkedin_url' => 'https://www.linkedin.com/in/eva-salsabila/',
                 'email' => 'eva.salsabila@agronex.id',
                 'bio' => json_encode([
@@ -363,10 +494,10 @@ class AgronexOfficialSeeder extends Seeder
                 'order_num' => 4
             ],
             [
-                'name' => 'Raka Alpiansyah',
+                'name' => json_encode(['id' => 'Raka Alpiansyah', 'en' => 'Raka Alpiansyah']),
                 'role' => json_encode(['id' => 'Engineering Lead', 'en' => 'Engineering Lead']),
                 'category' => 'Engineering',
-                'photo_path' => null,
+                'photo_path' => '/storage/uploads/team/img_6abc06e32ab691.11884727.webp',
                 'linkedin_url' => 'https://www.linkedin.com/in/raka-alpiansyah/',
                 'email' => 'raka.alpiansyah@agronex.id',
                 'bio' => json_encode([
@@ -379,6 +510,78 @@ class AgronexOfficialSeeder extends Seeder
                     'en' => 'Led low-power IoT hardware circuit design and weather durability testing in open agricultural fields.'
                 ]),
                 'order_num' => 5
+            ],
+            [
+                'name' => json_encode(['id' => 'Ariyanti Yusup', 'en' => 'Ariyanti Yusup']),
+                'role' => json_encode(['id' => 'Business & Marketing Lead', 'en' => 'Business & Marketing Lead']),
+                'category' => 'Business & Marketing',
+                'photo_path' => null,
+                'linkedin_url' => 'https://www.linkedin.com/in/ariyanti-yusup/',
+                'email' => 'ariyanti.yusup@agronex.id',
+                'bio' => json_encode([
+                    'id' => 'Business & Marketing Lead AGRONEX NUSANTARA. Memimpin strategi penetrasi pasar komersial agritech, pemasaran produk telemetri, kemitraan strategis B2B & B2G, serta edukasi program bundling dan kemitraan kelompok tani di berbagai daerah nusantara.',
+                    'en' => 'Business & Marketing Lead at AGRONEX NUSANTARA. Directs agritech commercial market penetration, product marketing, strategic B2B & B2G partnerships, and farming cooperative adoption programs nationwide.'
+                ]),
+                'skills' => 'Business Development, Agribusiness Marketing, Brand Strategy, B2B Partnerships, Farmer Outreach',
+                'contributions' => json_encode([
+                    'id' => 'Mengembangkan strategi kemitraan komersial agritech terjangkau dan perluasan adopsi alat telemetri ke kelompok tani serta dinas terkait.',
+                    'en' => 'Developed commercial partnership strategies for affordable agritech and expanded telemetry adoption among farming groups.'
+                ]),
+                'order_num' => 6
+            ],
+            [
+                'name' => json_encode(['id' => 'Salma Widiarti', 'en' => 'Salma Widiarti']),
+                'role' => json_encode(['id' => 'Agriculture & Field Operations', 'en' => 'Agriculture & Field Operations']),
+                'category' => 'Operations',
+                'photo_path' => null,
+                'linkedin_url' => 'https://www.linkedin.com/in/salma-widiarti/',
+                'email' => 'salma.widiarti@agronex.id',
+                'bio' => json_encode([
+                    'id' => 'Agriculture & Field Operations AGRONEX NUSANTARA. Bertanggung jawab atas operasional agronomi lapangan, pendampingan petani langsung di petak lahan, standardisasi SOP budidaya presisi, serta pengujian respon tanah dan tanaman terhadap sensor IoT.',
+                    'en' => 'Agriculture & Field Operations at AGRONEX NUSANTARA. Oversees field agronomy operations, direct farmer on-site assistance, precision cultivation SOP standardization, and crop-soil sensor telemetry response tests.'
+                ]),
+                'skills' => 'Agronomy, Field Operations, Crop Health Monitoring, Precision Farming SOP, Soil Data Collection',
+                'contributions' => json_encode([
+                    'id' => 'Menyusun SOP agronomi budidaya presisi berbasis telemetri dan memandu implementasi langsung di lahan petani hortikultura.',
+                    'en' => 'Authored precision agronomy SOPs based on sensor telemetry and guided hands-on implementation in horticulture fields.'
+                ]),
+                'order_num' => 7
+            ],
+            [
+                'name' => json_encode(['id' => 'Muhamad Ridho Fauzan', 'en' => 'Muhamad Ridho Fauzan']),
+                'role' => json_encode(['id' => 'CFO', 'en' => 'CFO']),
+                'category' => 'Executive',
+                'photo_path' => null,
+                'linkedin_url' => 'https://www.linkedin.com/in/muhamad-ridho-fauzan/',
+                'email' => 'ridho.fauzan@agronex.id',
+                'bio' => json_encode([
+                    'id' => 'Chief Financial Officer AGRONEX NUSANTARA. Mengelola perencanaan keuangan perusahaan, efisiensi struktur biaya produksi perangkat keras, skema pembiayaan inklusif sewa gotong-royong petani, serta akuntabilitas finansial.',
+                    'en' => 'Chief Financial Officer of AGRONEX NUSANTARA. Directs financial planning, hardware production cost optimization, inclusive farmer rental financing schemes, and financial governance.'
+                ]),
+                'skills' => 'Financial Modeling, Cost Optimization, Agritech Financing, Budgeting, Investment Analysis',
+                'contributions' => json_encode([
+                    'id' => 'Merumuskan struktur harga inklusif dan model sewa gotong-royong bulanan yang terjangkau bagi petani kecil.',
+                    'en' => 'Structured the inclusive pricing and monthly shared rental models accessible for smallholder farmers.'
+                ]),
+                'order_num' => 8
+            ],
+            [
+                'name' => json_encode(['id' => 'Syekoh Sultonah', 'en' => 'Syekoh Sultonah']),
+                'role' => json_encode(['id' => 'Head of Agricultural R&D', 'en' => 'Head of Agricultural R&D']),
+                'category' => 'Research',
+                'photo_path' => null,
+                'linkedin_url' => 'https://www.linkedin.com/in/syekoh-sultonah/',
+                'email' => 'syekoh.sultonah@agronex.id',
+                'bio' => json_encode([
+                    'id' => 'Head of Agricultural R&D AGRONEX NUSANTARA. Memimpin riset dan penelitian ilmiah pertanian presisi untuk eksplorasi dan pengembangan semua potensi komoditas pertanian nusantara, kalibrasi formulasi nutrisi tanah, serta integrasi data biosains tanaman.',
+                    'en' => 'Head of Agricultural R&D at AGRONEX NUSANTARA. Leads precision agriculture scientific research to unlock the full potential of Indonesian agricultural commodities, soil nutrient formulations, and plant bioscience data integration.'
+                ]),
+                'skills' => 'Agricultural R&D, Crop Science, Soil Chemistry Research, Nutrient Formulation, Agricultural Innovation',
+                'contributions' => json_encode([
+                    'id' => 'Memimpin riset ilmiah karakteristik tanah vulkanis Jawa Barat dan kalibrasi ambang batas nutrisi NPK untuk tanaman hortikultura.',
+                    'en' => 'Led scientific research on West Java volcanic soil characteristics and NPK nutrient threshold calibrations for horticulture crops.'
+                ]),
+                'order_num' => 9
             ],
         ];
 

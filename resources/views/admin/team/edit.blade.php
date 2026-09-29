@@ -59,11 +59,17 @@
                 <div class="space-y-2">
                     <label class="font-bold text-forest uppercase tracking-wider block">Category</label>
                     <select name="category" class="w-full px-4 py-3 rounded-xl border border-sand focus:outline-none focus:border-leaf-green bg-bg-base text-charcoal">
+                        <option value="Executive" {{ in_array($member->category, ['Executive', 'CEO']) ? 'selected' : '' }}>Executive</option>
                         <option value="CEO" {{ $member->category === 'CEO' ? 'selected' : '' }}>CEO</option>
+                        <option value="COO" {{ $member->category === 'COO' ? 'selected' : '' }}>COO</option>
                         <option value="CTO" {{ $member->category === 'CTO' ? 'selected' : '' }}>CTO</option>
-                        <option value="AI Engineer" {{ $member->category === 'AI Engineer' ? 'selected' : '' }}>AI Engineer</option>
+                        <option value="CFO" {{ $member->category === 'CFO' ? 'selected' : '' }}>CFO</option>
+                        <option value="Business & Marketing" {{ $member->category === 'Business & Marketing' ? 'selected' : '' }}>Business & Marketing</option>
+                        <option value="Operations" {{ $member->category === 'Operations' ? 'selected' : '' }}>Operations</option>
                         <option value="Agronomist" {{ $member->category === 'Agronomist' ? 'selected' : '' }}>Agronomist</option>
-                        <option value="Research" {{ $member->category === 'Research' ? 'selected' : '' }}>Research</option>
+                        <option value="Research" {{ $member->category === 'Research' ? 'selected' : '' }}>Research & Development</option>
+                        <option value="Engineering" {{ $member->category === 'Engineering' ? 'selected' : '' }}>Engineering</option>
+                        <option value="AI Engineer" {{ $member->category === 'AI Engineer' ? 'selected' : '' }}>AI Engineer</option>
                         <option value="Designer" {{ $member->category === 'Designer' ? 'selected' : '' }}>Designer</option>
                         <option value="Community" {{ $member->category === 'Community' ? 'selected' : '' }}>Community</option>
                         <option value="Advisor" {{ $member->category === 'Advisor' ? 'selected' : '' }}>Advisor</option>

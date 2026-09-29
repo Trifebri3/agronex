@@ -67,56 +67,60 @@
                 </div>
             </div>
 
-            <!-- Hook Urgency Card Right -->
+            <!-- Hook Urgency Card Right: Paket Bundling Mandiri Energi Portable (Include Panel Surya) -->
             <div class="lg:col-span-4">
                 <div class="bg-white rounded-3xl p-6 border-2 border-leaf-green/30 shadow-xl relative overflow-hidden space-y-5">
                     <div class="flex items-center justify-between pb-3 border-b border-sand/50">
                         <span class="px-3 py-1 bg-leaf-green text-white text-[10px] font-extrabold uppercase rounded-full tracking-wider">
-                            Paket Rekomendasi
+                            Paket Rekomendasi Lapangan
                         </span>
-                        <span class="text-xs font-bold text-leaf-green">Hemat s/d 30%</span>
+                        <span class="text-xs font-bold text-leaf-green">Hemat 35%</span>
                     </div>
 
                     <div class="space-y-2">
-                        <h3 class="font-extrabold text-lg text-forest font-display">Starter Kit Tani Presisi</h3>
+                        <h3 class="font-extrabold text-lg text-forest font-display">Paket Tani Mandiri Portable (Include Panel Surya)</h3>
                         <p class="text-xs text-charcoal/70 leading-relaxed">
-                            Paket bundling pilihan petani hortikultura Garut: 1x SoilSense + 1x WaterSense + Akses Cloud &amp; SIM 1 Tahun.
+                            100% Portable &amp; Mandiri Energi di Tengah Sawah! Sudah Termasuk 1x SoilSense + 1x Panel Surya 15W + 1x Tripod Lapangan Aluminium Knock-Down + Baterai LiFePO4 + SIM IoT 1 Tahun.
                         </p>
                     </div>
 
                     <div class="p-3.5 bg-primary-cream/40 rounded-2xl border border-sand/40 space-y-1">
-                        <div class="text-[11px] text-charcoal/50 line-through">Rp 4.550.000</div>
+                        <div class="text-[11px] text-charcoal/50 line-through">Rp 2.100.000</div>
                         <div class="flex items-baseline space-x-2">
-                            <span class="text-2xl font-black text-forest font-mono">Rp 3.200.000</span>
-                            <span class="text-[10px] font-bold text-leaf-green bg-leaf-green/10 px-2 py-0.5 rounded-full">Hemat Rp 1,35 Jt</span>
+                            <span class="text-2xl font-black text-forest font-mono">Rp 1.350.000</span>
+                            <span class="text-[10px] font-bold text-leaf-green bg-leaf-green/10 px-2 py-0.5 rounded-full">Hemat Rp 750.000</span>
                         </div>
                     </div>
 
                     <ul class="text-xs space-y-2 text-charcoal/80 font-medium">
                         <li class="flex items-center space-x-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
-                            <span>Akurasi sensor tanah &amp; kelembapan &gt; 95%</span>
+                            <span>Tanpa Tarik Kabel PLN / Bensin Genset</span>
                         </li>
                         <li class="flex items-center space-x-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
-                            <span>Termasuk Kartu SIM IoT Telkomsel 1 Tahun</span>
+                            <span>Tripod Ringan Portable (Mudah Dipindah Petak)</span>
                         </li>
                         <li class="flex items-center space-x-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
-                            <span>Akses Aplikasi Ponsel &amp; Notifikasi Lahan</span>
+                            <span>Akurasi Sensor Tanah NPK, pH, Lembap &gt; 95%</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
+                            <span>Termasuk Kartu SIM IoT Telkomsel 1 Tahun Aktif</span>
                         </li>
                     </ul>
 
                     <a 
-                        href="https://wa.me/{{ $settings['contact_whatsapp'] ?? '6285862319524' }}?text=Halo%20Agronex%20Nusantara,%20saya%20tertarik%20dengan%20Promo%20Starter%20Kit%20Tani%20Presisi%20(Rp%203.200.000).%20Mohon%20info%20ketersediaan%20stok%20dan%20cara%20pemesanannya." 
+                        href="https://wa.me/{{ $settings['contact_whatsapp'] ?? '6285862319524' }}?text=Halo%20Agronex%20Nusantara,%20saya%20tertarik%20dengan%20Promo%20Paket%20Tani%20Mandiri%20Portable%20Include%20Panel%20Surya%20(Rp%201.350.000).%20Mohon%20info%20ketersediaan%20stok%20dan%20cara%20pemesanannya." 
                         target="_blank"
                         class="w-full py-3.5 bg-leaf-green hover:bg-leaf-green-dark text-white font-extrabold text-xs uppercase tracking-wider rounded-2xl text-center block shadow-md hover:shadow-lg transition-all"
                     >
-                        Pesan Promo via WhatsApp
+                        Pesan Paket Surya via WhatsApp
                     </a>
 
                     <div class="text-[10px] text-center text-charcoal/50">
-                        Terbatas 15 unit untuk kloter produksi Garut bulan ini
+                        Skema sewa tersedia: mulai Rp 85.000/bln untuk Poktan
                     </div>
                 </div>
             </div>
@@ -133,28 +137,34 @@
             <div>
                 <span class="text-xs font-extrabold uppercase tracking-widest text-leaf-green">Katalog Perangkat Lapangan Resmi</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-forest font-display mt-1">Pilihan Produk AGRONEX</h2>
-                <p class="text-sm text-charcoal/70 mt-1">Pilih perangkat sesuai parameter lahan yang ingin Anda optimalkan.</p>
+                <p class="text-sm text-charcoal/70 mt-1">Solusi agritech presisi yang terjangkau, inklusif, dan siap pasang di lapangan.</p>
             </div>
 
             <!-- Filter Pills -->
             <div class="flex flex-wrap items-center gap-2">
                 <button onclick="filterCategory('all')" id="btn-filter-all" class="category-pill active px-4 py-2 rounded-full text-xs font-bold transition-all bg-forest text-primary-cream">
-                    Semua Produk (4)
+                    Semua Produk (7)
                 </button>
                 <button onclick="filterCategory('soil')" id="btn-filter-soil" class="category-pill px-4 py-2 rounded-full text-xs font-bold transition-all bg-white border border-sand hover:border-forest text-charcoal">
-                    Sensor Tanah (2)
+                    Tanah &amp; Portable (3)
                 </button>
                 <button onclick="filterCategory('water-climate')" id="btn-filter-water-climate" class="category-pill px-4 py-2 rounded-full text-xs font-bold transition-all bg-white border border-sand hover:border-forest text-charcoal">
                     Air &amp; Iklim Mikro (2)
                 </button>
+                <button onclick="filterCategory('hydro')" id="btn-filter-hydro" class="category-pill px-4 py-2 rounded-full text-xs font-bold transition-all bg-white border border-sand hover:border-forest text-charcoal">
+                    Smart Hidroponik (1)
+                </button>
+                <button onclick="filterCategory('controller')" id="btn-filter-controller" class="category-pill px-4 py-2 rounded-full text-xs font-bold transition-all bg-white border border-sand hover:border-forest text-charcoal">
+                    CPU Cerdas &amp; Gateway (1)
+                </button>
                 <a href="#paket-bundle" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-leaf-green/10 border border-leaf-green/30 text-leaf-green hover:bg-leaf-green hover:text-white">
-                    Paket Bundling
+                    Paket Bundling Solar
                 </a>
             </div>
         </div>
 
         <!-- PRODUCTS E-COMMERCE GRID -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             @foreach($products as $product)
             @php
                 $translatedName = trans_db($product->name);
@@ -166,7 +176,18 @@
                 $sku = $product->sku ?? ('AGX-' . strtoupper(substr($product->slug, 0, 4)));
                 $rating = $product->rating ?? '4.9';
                 $reviews = $product->reviews_count ?? 45;
-                $categoryGroup = in_array($product->slug, ['soilsense', 'terra']) ? 'soil' : 'water-climate';
+
+                if (in_array($product->slug, ['soilsense', 'terra', 'agrosolar-bundle'])) {
+                    $categoryGroup = 'soil';
+                } elseif (in_array($product->slug, ['watersense', 'envirosense'])) {
+                    $categoryGroup = 'water-climate';
+                } elseif ($product->slug === 'hydrosense') {
+                    $categoryGroup = 'hydro';
+                } elseif ($product->slug === 'agrocore-cpu') {
+                    $categoryGroup = 'controller';
+                } else {
+                    $categoryGroup = 'all';
+                }
 
                 $packageList = [];
                 if ($product->package_includes) {
@@ -232,16 +253,16 @@
                             @if($product->slug === 'soilsense')
                                 <div class="flex items-center space-x-2 text-[11px]">
                                     <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
-                                    <span>Monitoring pH, NPK, &amp; Kelembapan</span>
+                                    <span>Monitoring pH, NPK, &amp; Kelembapan Tanah</span>
                                 </div>
                                 <div class="flex items-center space-x-2 text-[11px]">
                                     <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
-                                    <span>Hemat Pupuk s/d 25%</span>
+                                    <span>Portable &amp; Hemat Pupuk s/d 25%</span>
                                 </div>
                             @elseif($product->slug === 'watersense')
                                 <div class="flex items-center space-x-2 text-[11px]">
                                     <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
-                                    <span>Sensor Volumetrik Air &amp; Debit Irigasi</span>
+                                    <span>Sensor Volumetrik Air &amp; Salinitas Irigasi</span>
                                 </div>
                                 <div class="flex items-center space-x-2 text-[11px]">
                                     <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
@@ -254,16 +275,43 @@
                                 </div>
                                 <div class="flex items-center space-x-2 text-[11px]">
                                     <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
-                                    <span>Deteksi Dini Jamur &amp; Cuaca Ekstrem</span>
+                                    <span>Deteksi Dini Hama &amp; Jamur via WA</span>
+                                </div>
+                            @elseif($product->slug === 'hydrosense')
+                                <div class="flex items-center space-x-2 text-[11px]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
+                                    <span>Sensor EC/TDS, pH &amp; Suhu Tandon Air</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-[11px]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
+                                    <span>Otomasi Dosing Pupuk AB Mix Presisi</span>
+                                </div>
+                            @elseif($product->slug === 'agrocore-cpu')
+                                <div class="flex items-center space-x-2 text-[11px]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
+                                    <span>CPU Edge Gateway Multi-Sensor Lapangan</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-[11px]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
+                                    <span>Modbus RS485 &amp; Relai Otomasi Pompa/Kran</span>
+                                </div>
+                            @elseif($product->slug === 'agrosolar-bundle')
+                                <div class="flex items-center space-x-2 text-[11px]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
+                                    <span>Include Panel Surya 15W &amp; Tripod Portable</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-[11px]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
+                                    <span>100% Mandiri Energi Tanpa Listrik PLN</span>
                                 </div>
                             @elseif($product->slug === 'terra')
                                 <div class="flex items-center space-x-2 text-[11px]">
                                     <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
-                                    <span>Soil Scanner Portabel Multi-Lahan</span>
+                                    <span>Soil Scanner Portabel Multi-Lahan Handheld</span>
                                 </div>
                                 <div class="flex items-center space-x-2 text-[11px]">
                                     <span class="w-1.5 h-1.5 rounded-full bg-leaf-green flex-shrink-0"></span>
-                                    <span>Uji Kesuburan dalam 3 Menit</span>
+                                    <span>Uji Kesuburan dalam 3 Menit di Tempat</span>
                                 </div>
                             @endif
                         </div>

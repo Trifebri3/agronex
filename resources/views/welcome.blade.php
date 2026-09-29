@@ -411,6 +411,33 @@
                                 <span class="w-1.5 h-1.5 rounded-full bg-leaf-green inline-block mr-1.5 flex-shrink-0"></span>
                                 <span>Peringatan dini risiko serangan hama &amp; jamur via WhatsApp</span>
                             </div>
+                        @elseif($product->slug === 'hydrosense')
+                            <div class="flex items-center space-x-1.5">
+                                <span class="font-bold text-forest text-[10px] uppercase">Parameter:</span>
+                                <span>EC / TDS &bull; pH Cairan &bull; Suhu &bull; Water Level</span>
+                            </div>
+                            <div class="text-[10px] text-leaf-green font-semibold flex items-center">
+                                <span class="w-1.5 h-1.5 rounded-full bg-leaf-green inline-block mr-1.5 flex-shrink-0"></span>
+                                <span>Otomasi pompa dosing pupuk AB Mix &amp; sirkulasi hidroponik presisi</span>
+                            </div>
+                        @elseif($product->slug === 'agrocore-cpu')
+                            <div class="flex items-center space-x-1.5">
+                                <span class="font-bold text-forest text-[10px] uppercase">Fungsi:</span>
+                                <span>CPU Edge Gateway &bull; Modbus RS485 &bull; Relai Pompa</span>
+                            </div>
+                            <div class="text-[10px] text-leaf-green font-semibold flex items-center">
+                                <span class="w-1.5 h-1.5 rounded-full bg-leaf-green inline-block mr-1.5 flex-shrink-0"></span>
+                                <span>Otak kontrol sentral multi-sensor, integrasi katup solenoid &amp; pompa</span>
+                            </div>
+                        @elseif($product->slug === 'agrosolar-bundle')
+                            <div class="flex items-center space-x-1.5">
+                                <span class="font-bold text-forest text-[10px] uppercase">Paket Lapangan:</span>
+                                <span>Panel Surya 15W + Tripod + SoilSense + LiFePO4</span>
+                            </div>
+                            <div class="text-[10px] text-leaf-green font-semibold flex items-center">
+                                <span class="w-1.5 h-1.5 rounded-full bg-leaf-green inline-block mr-1.5 flex-shrink-0"></span>
+                                <span>100% Portable &amp; Mandiri Energi, siap pasang tanpa kabel listrik PLN</span>
+                            </div>
                         @elseif($product->slug === 'terra')
                             <div class="flex items-center space-x-1.5">
                                 <span class="font-bold text-forest text-[10px] uppercase">Fungsi:</span>
@@ -1497,12 +1524,12 @@
             <span class="text-xs font-bold uppercase tracking-widest text-leaf-green">Tim Pengembang Resmi &bull; Team</span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-forest font-display">Tim AGRONEX NUSANTARA</h2>
             <p class="text-sm text-charcoal/70">
-                Kombinasi keahlian strategi agritech, operasional lapangan, arsitektur software cerdas, dampak sosial, dan rekayasa perangkat keras IoT.
+                Kombinasi keahlian kepemimpinan agritech, operasional lapangan, arsitektur software cerdas, dampak sosial, rekayasa perangkat keras IoT, riset pertanian, keuangan, dan penetrasi pasar komersial.
             </p>
         </div>
 
-        <!-- 5 Official Team Members Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+        <!-- Official Team Members Grid (Dynamic from Database) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             @foreach($team as $member)
             @php
                 $translatedMember = clone $member;

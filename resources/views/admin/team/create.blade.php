@@ -37,11 +37,17 @@
                 <div class="space-y-2">
                     <label class="font-bold text-forest uppercase tracking-wider block">Category</label>
                     <select name="category" class="w-full px-4 py-3 rounded-xl border border-sand focus:outline-none focus:border-leaf-green bg-bg-base text-charcoal">
+                        <option value="Executive">Executive</option>
                         <option value="CEO">CEO</option>
+                        <option value="COO">COO</option>
                         <option value="CTO">CTO</option>
-                        <option value="AI Engineer">AI Engineer</option>
+                        <option value="CFO">CFO</option>
+                        <option value="Business & Marketing">Business & Marketing</option>
+                        <option value="Operations">Operations</option>
                         <option value="Agronomist">Agronomist</option>
-                        <option value="Research">Research</option>
+                        <option value="Research">Research & Development</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="AI Engineer">AI Engineer</option>
                         <option value="Designer">Designer</option>
                         <option value="Community">Community</option>
                         <option value="Advisor">Advisor</option>

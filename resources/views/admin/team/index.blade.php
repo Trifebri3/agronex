@@ -29,7 +29,13 @@
                 @foreach($team as $member)
                 <tr class="hover:bg-primary-cream/5 transition-colors">
                     <td class="py-4 px-6">
-                        <img src="{{ $member->photo_path }}" class="w-10 h-10 rounded-full object-cover border border-sand/40" alt="avatar">
+                        @if($member->photo_path)
+                            <img src="{{ $member->photo_path }}" class="w-10 h-10 rounded-full object-cover border border-sand/40" alt="avatar">
+                        @else
+                            <div class="w-10 h-10 rounded-full bg-forest text-primary-cream flex items-center justify-center font-bold text-xs uppercase">
+                                {{ substr(trans_db($member->name), 0, 1) }}
+                            </div>
+                        @endif
                     </td>
                     <td class="py-4 px-6 font-bold text-forest font-display">{{ trans_db($member->name) }}</td>
                     <td class="py-4 px-6">{{ trans_db($member->role) }}</td>
