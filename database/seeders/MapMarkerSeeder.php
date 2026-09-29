@@ -183,6 +183,94 @@ class MapMarkerSeeder extends Seeder
                     ['key_id' => 'Target Capaian', 'value' => 'Peningkatan produktivitas cabai rawit hingga 25% dan efisiensi air 35%'],
                     ['key_id' => 'Lokasi', 'value' => 'Pamarican, Kabupaten Ciamis']
                 ])
+            ],
+            [
+                'title' => json_encode([
+                    'id' => 'Pengujian Kualitas Tanah Bersama Warga Desa Purbayani',
+                    'en' => 'Community Soil Quality Assessment - Purbayani Village'
+                ]),
+                'marker_type' => 'Uji Tanah & Pendampingan Masyarakat',
+                'latitude' => '-7.530939274899718',
+                'longitude' => '107.49358346814502',
+                'details' => json_encode([
+                    ['key_id' => 'Fokus Kegiatan', 'value' => 'Pengujian kualitas dan struktur hara tanah secara partisipatif bersama masyarakat'],
+                    ['key_id' => 'Sensor Digunakan', 'value' => 'Probe multi-depth SoilSense'],
+                    ['key_id' => 'Lokasi', 'value' => 'Desa Purbayani, Caringin, Garut Selatan']
+                ])
+            ],
+            [
+                'title' => json_encode([
+                    'id' => 'Kajian Lahan Cabai & Semangka Pak Ustadz Cijayana',
+                    'en' => 'Chili & Watermelon Agro-Telemetry - Pak Ustadz Cijayana Farm'
+                ]),
+                'marker_type' => 'Validasi Hortikultura & Rekomendasi Lahan',
+                'latitude' => '-7.55931954308137',
+                'longitude' => '107.56851139330786',
+                'details' => json_encode([
+                    ['key_id' => 'Fokus Kegiatan', 'value' => 'Pengujian kualitas lahan cabai, identifikasi potensi irigasi hemat & mitigasi risiko hama'],
+                    ['key_id' => 'Rekomendasi Lahan', 'value' => 'Intervensi pengelolaan tanah dan rekomendasi pemupukan presisi untuk semangka'],
+                    ['key_id' => 'Lokasi', 'value' => 'Lahan Pak Ustadz, Cijayana, Garut Selatan']
+                ])
+            ],
+            [
+                'title' => json_encode([
+                    'id' => 'Demplot Pembibitan Konservasi Bersama Yota & Yayasan Lintasan',
+                    'en' => 'Conservation Tree Nursery Demplot - Yota & Yayasan Lintasan'
+                ]),
+                'marker_type' => 'Konservasi Lingkungan & Pembibitan',
+                'latitude' => '-7.045375523747971',
+                'longitude' => '107.88145551827319',
+                'details' => json_encode([
+                    ['key_id' => 'Mitra Kolaborasi', 'value' => 'Yota Adiwidya Center & Yayasan Lintasan'],
+                    ['key_id' => 'Fokus Kegiatan', 'value' => 'Pengujian kesuburan tanah untuk demplot pembibitan pohon konservasi Bandung Raya'],
+                    ['key_id' => 'Tujuan', 'value' => 'Konservasi daerah tangkapan air dan stabilisasi lereng kritis'],
+                    ['key_id' => 'Lokasi', 'value' => 'Kawasan Konservasi Bandung Raya']
+                ])
+            ],
+            [
+                'title' => json_encode([
+                    'id' => 'Validasi Tanah & Uji Coba Budidaya Timun Pak Risan',
+                    'en' => 'Cucumber Precision Farming Trial - Pak Risan Farm'
+                ]),
+                'marker_type' => 'Pendampingan Budidaya & Validasi Tanah',
+                'latitude' => '-7.375547776704404',
+                'longitude' => '107.48151598643335',
+                'details' => json_encode([
+                    ['key_id' => 'Fokus Kegiatan', 'value' => 'Validasi pengujian kesuburan tanah dan pendampingan uji coba budidaya mentimun presisi'],
+                    ['key_id' => 'Petani Mitra', 'value' => 'Pak Risan'],
+                    ['key_id' => 'Hasil Pengujian', 'value' => 'Rekomendasi jadwal pengairan dan dosis pupuk berimbang'],
+                    ['key_id' => 'Lokasi', 'value' => 'Lahan Pertanian Mentimun Pak Risan']
+                ])
+            ],
+            [
+                'title' => json_encode([
+                    'id' => 'Inisiasi Vertical Garden Pesantren Darul Falah & Yota',
+                    'en' => 'Vertical Garden Initiative - Darul Falah Islamic Boarding School & Yota'
+                ]),
+                'marker_type' => 'Pesantren Agritech & Vertical Garden',
+                'latitude' => '-7.3819767654226975',
+                'longitude' => '107.47682957205618',
+                'details' => json_encode([
+                    ['key_id' => 'Mitra Kolaborasi', 'value' => 'Yota Adiwidya Center & Pondok Pesantren Darul Falah'],
+                    ['key_id' => 'Fokus Kegiatan', 'value' => 'Peninjauan dan persiapan kolaborasi instalasi vertical garden untuk edukasi pertanian santri'],
+                    ['key_id' => 'Program', 'value' => 'Kemandirian pangan pesantren berbasis lahan terbatas'],
+                    ['key_id' => 'Lokasi', 'value' => 'Pondok Pesantren Darul Falah']
+                ])
+            ],
+            [
+                'title' => json_encode([
+                    'id' => 'Smart Hidroponik Pesantren Khoerul Umam & Yota',
+                    'en' => 'Smart Hydroponics Implementation - Khoerul Umam Islamic Boarding School & Yota'
+                ]),
+                'marker_type' => 'Pesantren Agritech & Smart Hidroponik',
+                'latitude' => '-6.8095631809110175',
+                'longitude' => '107.96445608673167',
+                'details' => json_encode([
+                    ['key_id' => 'Mitra Kolaborasi', 'value' => 'Yota Adiwidya Center & Pondok Pesantren Khoerul Umam'],
+                    ['key_id' => 'Implementasi', 'value' => 'Pemasangan smart hidroponik dengan pemantauan otomatis pH, EC nutrisi, & sirkulasi air'],
+                    ['key_id' => 'Kemandirian Santri', 'value' => 'Produksi sayuran hidroponik segar untuk konsumsi santri & unit usaha pesantren'],
+                    ['key_id' => 'Lokasi', 'value' => 'Pondok Pesantren Khoerul Umam']
+                ])
             ]
         ];
 
