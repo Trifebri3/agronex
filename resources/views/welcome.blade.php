@@ -2161,9 +2161,28 @@
                 scrollWheelZoom: false
             });
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; OpenStreetMap contributors'
-            }).addTo(map);
+            // High-resolution, reliable CartoDB Voyager layer (No 403 blocks, optimized for modern agritech display)
+            const voyagerLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank">CARTO</a>',
+                subdomains: 'abcd',
+                maxZoom: 20
+            });
+
+            // Satellite imagery layer for real agricultural fields (Esri World Imagery)
+            const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, GIS User Community',
+                maxZoom: 19
+            });
+
+            // Add default layer
+            voyagerLayer.addTo(map);
+
+            // Layer selector control
+            const baseMaps = {
+                "Peta Lapangan Presisi": voyagerLayer,
+                "Citra Satelit Lahan": satelliteLayer
+            };
+            L.control.layers(baseMaps, null, { position: 'topright' }).addTo(map);
 
             const points = [
                 @foreach($mapMarkers as $marker)
