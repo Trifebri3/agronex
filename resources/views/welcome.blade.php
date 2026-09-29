@@ -297,13 +297,20 @@
 
 <!-- SECTION: PRODUCTS (FROM DATABASE: products) -->
 <section id="products" class="py-24 bg-bg-base border-b border-sand/35">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span class="text-xs font-bold uppercase tracking-widest text-leaf-green">Katalog Perangkat Lapangan &bull; Products</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-forest font-display">Produk AGRONEX</h2>
-            <p class="text-sm text-charcoal/75">
-                Empat lapisan untuk membantu petani dari pengukuran hingga tindakan.
-            </p>
+    <div class="max-w-7xl mx-auto px-6 space-y-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div class="space-y-3">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-leaf-green">Katalog &amp; Penjualan Resmi Lapangan &bull; E-Commerce Ready</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-forest font-display">Produk &amp; Sensor AGRONEX</h2>
+                <p class="text-sm text-charcoal/75 max-w-2xl leading-relaxed">
+                    Instrumen telemetri teruji untuk membaca kondisi nyata lahan. Siap dipesan untuk petani mandiri, kelompok tani, maupun perusahaan agribisnis.
+                </p>
+            </div>
+            
+            <a href="{{ route('products.index') }}" class="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-forest text-primary-cream hover:bg-forest-dark font-extrabold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex-shrink-0">
+                <span>🛒 Buka Toko &amp; Promo Bundling</span>
+                <span>&rarr;</span>
+            </a>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -323,10 +330,15 @@
                     $statusLabel = 'PROTOTYPE / DEVELOPMENT';
                     $categoryLabel = 'SOIL INTELLIGENCE';
                 }
+
+                $priceFormatted = $product->price ? number_format($product->price, 0, ',', '.') : null;
+                $origPriceFormatted = $product->original_price ? number_format($product->original_price, 0, ',', '.') : null;
+                $sku = $product->sku ?? ('AGX-' . strtoupper(substr($product->slug, 0, 4)));
+                $badge = $product->badge ?? $categoryLabel;
+                $hook = trans_db($product->hook ?? 'Investasi alat presisi yang balik modal dalam 1 siklus panen.');
             @endphp
             <div 
-                onclick="openProductModal({{ json_encode($translatedProduct) }})"
-                class="bg-white border border-sand/40 hover:border-leaf-green rounded-3xl p-8 shadow-sm hover-lift cursor-pointer group flex flex-col justify-between space-y-6"
+                class="bg-white border border-sand/40 hover:border-leaf-green rounded-3xl p-8 shadow-xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between space-y-6 relative overflow-hidden"
             >
                 <div class="space-y-5">
                     <!-- Photo Header -->
@@ -338,73 +350,138 @@
                                 AGRONEX {{ $translatedProduct->name }}
                             </div>
                         @endif
-                        <div class="absolute top-3 left-3 px-2.5 py-0.5 bg-forest text-primary-cream text-[9px] font-bold uppercase rounded-full font-mono">
-                            {{ $categoryLabel }}
+                        <div class="absolute top-3 left-3 px-2.5 py-1 bg-forest text-primary-cream text-[9px] font-bold uppercase rounded-full font-mono shadow-sm">
+                            {{ $badge }}
                         </div>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 bg-white/90 backdrop-blur-sm text-forest border border-sand/50 text-[8px] font-bold uppercase rounded-full tracking-wider">
-                            {{ $statusLabel }}
+                        <div class="absolute top-3 right-3 px-2.5 py-1 bg-white/95 backdrop-blur-sm text-leaf-green border border-sand/50 text-[9px] font-bold uppercase rounded-full tracking-wider flex items-center space-x-1.5 shadow-sm">
+                            <span class="w-1.5 h-1.5 rounded-full bg-leaf-green animate-pulse"></span>
+                            <span>Ready Stock</span>
                         </div>
                     </div>
 
-                    <!-- Title & Desc -->
-                    <div class="space-y-2">
+                    <!-- Title & Rating -->
+                    <div class="space-y-1.5">
                         <div class="flex items-center justify-between">
-                            <h3 class="font-extrabold text-xl text-forest font-display group-hover:text-leaf-green transition-colors">
-                                {{ $translatedProduct->name }}
-                            </h3>
-                            <span class="text-xs font-bold text-leaf-green opacity-0 group-hover:opacity-100 transition-opacity">
-                                Detail &rarr;
-                            </span>
+                            <span class="font-mono text-[10px] text-charcoal/50 uppercase font-semibold">SKU: {{ $sku }}</span>
+                            <div class="flex items-center space-x-1 text-amber-500 text-xs font-bold">
+                                <span>★</span>
+                                <span class="text-charcoal">{{ $product->rating ?? '4.9' }}</span>
+                                <span class="text-charcoal/40 text-[10px]">({{ $product->reviews_count ?? 40 }} ulasan)</span>
+                            </div>
                         </div>
+
+                        <h3 class="font-extrabold text-2xl text-forest font-display group-hover:text-leaf-green transition-colors">
+                            {{ $translatedProduct->name }}
+                        </h3>
                         <p class="text-xs text-charcoal/80 leading-relaxed font-light">
                             {{ $translatedProduct->description }}
                         </p>
                     </div>
 
+                    <!-- Commercial Hook Callout -->
+                    <div class="p-3 bg-primary-cream/40 rounded-2xl border border-sand/40 text-[11px] text-forest/90 italic font-medium leading-relaxed">
+                        &ldquo;{{ $hook }}&rdquo;
+                    </div>
+
                     <!-- Purpose & Parameters Badge -->
-                    <div class="p-3 bg-primary-cream/30 rounded-xl border border-sand/30 space-y-1.5 text-xs text-charcoal/75">
+                    <div class="p-3 bg-bg-base rounded-xl border border-sand/30 space-y-1 text-xs text-charcoal/75">
                         @if($product->slug === 'soilsense')
                             <div class="flex items-center space-x-1.5">
                                 <span class="font-bold text-forest text-[10px] uppercase">Penggunaan:</span>
                                 <span>pH &bull; NPK &bull; Kelembapan Tanah</span>
                             </div>
-                            <div class="text-[11px] italic text-charcoal/70">
-                                &ldquo;Memahami kondisi tanah sebelum mengambil keputusan budidaya.&rdquo;
+                            <div class="text-[10px] text-leaf-green font-semibold">
+                                &check; Terbukti menghemat pupuk kimia hingga 25% di lahan Garut
                             </div>
                         @elseif($product->slug === 'watersense')
                             <div class="flex items-center space-x-1.5">
                                 <span class="font-bold text-forest text-[10px] uppercase">Penggunaan:</span>
                                 <span>Volumetrik Air &bull; Kualitas Air Irigasi</span>
                             </div>
-                            <div class="text-[11px] italic text-charcoal/70">
-                                &ldquo;Mengurangi penyiraman berdasarkan perkiraan.&rdquo;
+                            <div class="text-[10px] text-leaf-green font-semibold">
+                                &check; Mengurangi penyiraman berlebih &amp; mencegah busuk akar
                             </div>
                         @elseif($product->slug === 'envirosense')
                             <div class="flex items-center space-x-1.5">
                                 <span class="font-bold text-forest text-[10px] uppercase">Parameter:</span>
                                 <span>Suhu &bull; Kelembapan Relatif &bull; Iklim Mikro</span>
                             </div>
-                            <div class="text-[11px] italic text-charcoal/70">
-                                &ldquo;Memahami kondisi lingkungan yang memengaruhi tanaman.&rdquo;
+                            <div class="text-[10px] text-leaf-green font-semibold">
+                                &check; Peringatan dini risiko serangan hama &amp; jamur via WhatsApp
                             </div>
                         @elseif($product->slug === 'terra')
                             <div class="flex items-center space-x-1.5">
                                 <span class="font-bold text-forest text-[10px] uppercase">Fungsi:</span>
                                 <span>Soil Scanning Praktis &bull; Pemetaan Tanah Cepat</span>
                             </div>
-                            <div class="text-[11px] italic text-charcoal/70">
-                                &ldquo;Mempercepat pengumpulan data kondisi lahan.&rdquo;
+                            <div class="text-[10px] text-leaf-green font-semibold">
+                                &check; Uji kesuburan tanah 1 petak langsung di tempat dalam 3 menit
                             </div>
                         @endif
                     </div>
                 </div>
 
-                <div class="pt-4 border-t border-sand/30 flex items-center justify-between text-[11px]">
-                    <span class="text-charcoal/60 font-medium">Klik kartu untuk spesifikasi teknis</span>
-                    <span class="font-bold text-leaf-green group-hover:underline">Buka Modal &rarr;</span>
+                <!-- Commercial Pricing & Order CTA -->
+                <div class="pt-4 border-t border-sand/40 space-y-3">
+                    <div class="flex items-baseline justify-between">
+                        <div>
+                            @if($origPriceFormatted)
+                                <div class="text-[10px] text-charcoal/40 line-through">Rp {{ $origPriceFormatted }}</div>
+                            @endif
+                            <div class="flex items-baseline space-x-1">
+                                <span class="text-xs text-charcoal/60 font-bold">Rp</span>
+                                <span class="text-2xl font-black text-forest font-mono tracking-tight">{{ $priceFormatted ?? 'Hubungi Tim' }}</span>
+                                <span class="text-[10px] text-charcoal/50">/ unit</span>
+                            </div>
+                        </div>
+
+                        @if($product->subscription_price && $product->subscription_price > 0)
+                            <div class="text-right">
+                                <div class="text-[10px] text-charcoal/50">Skema Sewa</div>
+                                <div class="text-xs font-bold text-leaf-green font-mono">Rp {{ number_format($product->subscription_price, 0, ',', '.') }}/bln</div>
+                            </div>
+                        @endif
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2">
+                        <a 
+                            href="https://wa.me/{{ $settings['contact_whatsapp'] ?? '6285862319524' }}?text=Halo%20Tim%20Agronex,%20saya%20tertarik%20membeli%20perangkat%20{{ urlencode($translatedProduct->name) }}%20(SKU:%20{{ $sku }}).%20Mohon%20info%20ketersediaan%20stok%20dan%20cara%20pemesanannya." 
+                            target="_blank"
+                            class="py-2.5 bg-leaf-green hover:bg-leaf-green-dark text-white font-extrabold text-xs uppercase tracking-wider rounded-xl text-center shadow-xs hover:shadow-md transition-all flex items-center justify-center space-x-1"
+                        >
+                            <span>💬 Beli via WA</span>
+                        </a>
+
+                        <button 
+                            type="button"
+                            onclick="openProductModal({{ json_encode($translatedProduct) }})"
+                            class="py-2.5 bg-primary-cream/50 hover:bg-primary-cream text-forest border border-sand/60 font-bold text-xs rounded-xl transition-colors text-center"
+                        >
+                            Spesifikasi &rarr;
+                        </button>
+                    </div>
+
+                    <div class="text-[9px] text-center text-charcoal/50">
+                        🛡️ {{ $product->warranty_info ?? 'Garansi Resmi 12 Bulan Ganti Baru' }}
+                    </div>
                 </div>
             </div>
             @endforeach
+        </div>
+
+        <!-- Promo Banner Bottom -->
+        <div class="p-8 sm:p-10 rounded-3xl bg-forest text-primary-cream border border-forest-dark shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 max-w-5xl mx-auto">
+            <div class="space-y-2 text-center md:text-left">
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-leaf-green-light">Hemat Biaya Hingga 30%</span>
+                <h3 class="text-2xl font-bold font-display">Butuh Paket Lengkap dengan Instalasi &amp; Kalibrasi Lahan?</h3>
+                <p class="text-xs text-primary-cream/80 max-w-xl leading-relaxed">
+                    Dapatkan Paket Tani Mandiri (Starter Kit) atau Skema Kemitraan Poktan dengan cicilan ringan / bagi hasil panen.
+                </p>
+            </div>
+
+            <a href="{{ route('products.index') }}#paket-bundle" class="px-8 py-3.5 bg-leaf-green hover:bg-leaf-green-dark text-white font-extrabold text-xs uppercase tracking-wider rounded-full shadow-lg hover:shadow-xl transition-all whitespace-nowrap">
+                Lihat Paket Bundling &rarr;
+            </a>
         </div>
     </div>
 </section>

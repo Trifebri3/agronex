@@ -34,8 +34,12 @@
                 <!-- Solution -->
                 <a href="{{ route('home') }}#solution" class="hover:text-leaf-green transition-colors duration-200">{{ app()->getLocale() === 'en' ? 'Solution' : 'Solusi' }}</a>
                 
-                <!-- Products -->
-                <a href="{{ route('home') }}#products" class="hover:text-leaf-green transition-colors duration-200">{{ app()->getLocale() === 'en' ? 'Products' : 'Produk' }}</a>
+                <!-- Products Storefront Link -->
+                <a href="{{ route('products.index') }}" class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-leaf-green/10 border border-leaf-green/25 text-leaf-green hover:bg-leaf-green hover:text-white transition-all duration-200 shadow-2xs font-bold {{ request()->routeIs('products.index') ? 'bg-leaf-green text-white shadow-xs' : '' }}">
+                    <span>🛒</span>
+                    <span>{{ app()->getLocale() === 'en' ? 'Store & Products' : 'Produk & Toko' }}</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-leaf-green-light animate-pulse"></span>
+                </a>
 
                 <!-- How It Works -->
                 <a href="{{ route('home') }}#how-it-works" class="hover:text-leaf-green transition-colors duration-200">{{ app()->getLocale() === 'en' ? 'How It Works' : 'Cara Kerja' }}</a>
@@ -135,7 +139,10 @@
             </div>
             <a href="{{ route('home') }}#problem" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'Problem' : 'Masalah' }}</a>
             <a href="{{ route('home') }}#solution" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'Solution' : 'Solusi' }}</a>
-            <a href="{{ route('home') }}#products" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'Products' : 'Produk' }}</a>
+            <a href="{{ route('products.index') }}" class="flex items-center justify-between text-sm font-bold text-leaf-green hover:text-forest py-2 px-3 rounded-xl bg-leaf-green/10 border border-leaf-green/25 my-1">
+                <span>🛒 {{ app()->getLocale() === 'en' ? 'Store & Products (Katalog)' : 'Katalog Produk & Toko Agritech' }}</span>
+                <span class="text-[9px] bg-leaf-green text-white font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">Ready Stock</span>
+            </a>
             <a href="{{ route('home') }}#how-it-works" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'How It Works' : 'Cara Kerja' }}</a>
             <a href="{{ route('home') }}#validation" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'Field Validation' : 'Validasi Lapangan' }}</a>
             <a href="{{ route('home') }}#business-model" class="block text-sm font-medium text-forest hover:text-leaf-green py-1">{{ app()->getLocale() === 'en' ? 'Business Model' : 'Model Bisnis' }}</a>
@@ -195,9 +202,10 @@
             <div class="md:col-span-3">
                 <h4 class="font-bold text-xs text-forest uppercase tracking-widest mb-4">{{ app()->getLocale() === 'en' ? 'Core Architecture' : 'Arsitektur Inti' }}</h4>
                 <ul class="space-y-2.5 text-xs font-medium text-charcoal/80">
+                    <li><a href="{{ route('products.index') }}" class="font-bold text-leaf-green hover:underline flex items-center space-x-1"><span>🛒</span><span>{{ app()->getLocale() === 'en' ? 'Store & Product Bundles' : 'Katalog & Toko Produk' }}</span></a></li>
                     <li><a href="{{ route('home') }}#problem" class="hover:text-leaf-green">{{ app()->getLocale() === 'en' ? 'The Problem' : 'Masalah Ketidakpastian' }}</a></li>
                     <li><a href="{{ route('home') }}#solution" class="hover:text-leaf-green">{{ app()->getLocale() === 'en' ? 'System Solution' : 'Solusi & Alur Kerja' }}</a></li>
-                    <li><a href="{{ route('home') }}#products" class="hover:text-leaf-green">{{ app()->getLocale() === 'en' ? '01 Field Sensing (SoilSense & Terra)' : '01 Field Sensing (SoilSense & Terra)' }}</a></li>
+                    <li><a href="{{ route('products.index') }}" class="hover:text-leaf-green">{{ app()->getLocale() === 'en' ? '01 Field Sensing (SoilSense & Terra)' : '01 Field Sensing (SoilSense & Terra)' }}</a></li>
                     <li><a href="{{ route('home') }}#how-it-works" class="hover:text-leaf-green">{{ app()->getLocale() === 'en' ? '02 AgroPredict Engine & Intelligence' : '02 AgroPredict Engine & Intelligence' }}</a></li>
                     <li><a href="{{ route('home') }}#how-it-works" class="hover:text-leaf-green">{{ app()->getLocale() === 'en' ? '03 Advisory (WhatsApp & Mobile)' : '03 Advisory (WhatsApp & Mobile)' }}</a></li>
                     <li><a href="{{ route('home') }}#how-it-works" class="hover:text-leaf-green">{{ app()->getLocale() === 'en' ? '04 Action (Smart Irrigation)' : '04 Action (Irigasi Cerdas)' }}</a></li>

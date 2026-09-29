@@ -223,4 +223,99 @@ class PublicController extends Controller
 
         return view('credibility', compact('settings', 'recognitions', 'ceo'));
     }
+
+    public function products()
+    {
+        $settings = Setting::pluck('value', 'key')->all();
+        $products = Product::all();
+        
+        // Curated Commercial Packages / Bundles
+        $bundles = [
+            [
+                'id' => 'starter-kit',
+                'name' => 'Paket Tani Mandiri (Starter Kit)',
+                'badge' => 'PILIHAN PETANI PEMULA',
+                'tagline' => 'Solusi lengkap pemantauan nutrisi tanah dan kelembaban irigasi untuk lahan 1 - 2 Hektar.',
+                'price' => 3200000,
+                'original_price' => 4550000,
+                'discount' => 'HEMAT 30%',
+                'items' => [
+                    '1x SoilSense (pH, NPK, Soil Moisture)',
+                    '1x WaterSense (Volumetrik Air & Irigasi)',
+                    'Gratis 1 Tahun Cloud SIM IoT & Dashboard',
+                    'Gratis Kalibrasi Tanah & Konsultasi Agronomi',
+                    'Garansi Resmi 12 Bulan Tukar Baru'
+                ],
+                'recommended' => true,
+                'roi_text' => 'Estimasi Balik Modal: 1 Musim Panen (Penghematan Pupuk ~Rp 1,5 Juta/Musim)'
+            ],
+            [
+                'id' => 'pro-kit',
+                'name' => 'Paket Perkebunan Presisi (Pro Kit)',
+                'badge' => 'TERLENGKAP & TERLARIS',
+                'tagline' => 'Pemantauan komprehensif tanah, air, dan iklim mikro untuk perkebunan bernilai tinggi (Hortikultura/Kopi/Kentang).',
+                'price' => 6800000,
+                'original_price' => 9150000,
+                'discount' => 'HEMAT 26%',
+                'items' => [
+                    '2x SoilSense Multi-Plot Sensor',
+                    '1x WaterSense Irigasi Otomatis',
+                    '1x EnviroSense Weather Station Iklim Mikro',
+                    '1x Sesi Pemetaan Drone & Citra Multispektral Lahan',
+                    'Prioritas Bantuan Teknisi Lapangan 24/7',
+                    'Garansi Resmi 18 Bulan Tukar Baru'
+                ],
+                'recommended' => false,
+                'roi_text' => 'Estimasi Balik Modal: < 4 Bulan (Cegah Gagal Panen Akibat Hama & Jamur)'
+            ],
+            [
+                'id' => 'enterprise-kit',
+                'name' => 'Skema Kemitraan Poktan & B2B',
+                'badge' => 'TANPA BIAYA AWAL BESAR',
+                'tagline' => 'Skema sewa terjangkau atau bagi hasil panen khusus Kelompok Tani, Koperasi, dan Perusahaan Agribisnis.',
+                'price' => 150000,
+                'price_subtext' => '/ hektar / bulan',
+                'original_price' => null,
+                'discount' => 'SKEMA SEWA / BAGI HASIL',
+                'items' => [
+                    'Pemasangan Sensor Sesuai Luas Hamparan',
+                    'Penggantian Unit Rusak Tanpa Syarat (All-Risk)',
+                    'Integrasi Sistem ke Koperasi / Offtaker Pembeli',
+                    'Pendampingan Petugas Agronomis Berkala di Garut',
+                    'Akses Dashboard Eksekutif Monitoring Multi-Petani'
+                ],
+                'recommended' => false,
+                'roi_text' => 'Tanpa Capex Awal • Risiko 0% bagi Petani Anggota'
+            ]
+        ];
+
+        return view('products', compact('settings', 'products', 'bundles'));
+    }
+
+    public function orderProduct(Request $request)
+    {
+        $request->validate([
+            'product_name' => 'required|string|max:150',
+            'customer_name' => 'required|string|max:100',
+            'customer_phone' => 'required|string|max:30',
+            'quantity' => 'nullable|integer|min:1',
+            'delivery_address' => 'nullable|string|max:300',
+            'notes' => 'nullable|string',
+        ]);
+
+        Lead::create([
+            'type' => 'product_order',
+            'name' => $request->customer_name,
+            'phone' => $request->customer_phone,
+            'email' => $request->customer_email ?? 'order@customer.agronex.id',
+            'subject' => 'Pemesanan Produk: ' . $request->product_name . ' (' . ($request->quantity ?? 1) . ' unit)',
+            'message' => "Produk: {$request->product_name}\nJumlah: " . ($request->quantity ?? 1) . " unit\nAlamat Kirim: {$request->delivery_address}\nCatatan: {$request->notes}",
+            'status' => 'pending',
+        ]);
+
+        $waNumber = '6285862319524';
+        $message = "Halo Tim Agronex Nusantara,%0A%0ASaya ingin memesan perangkat pertanian presisi:%0A• *Produk:* " . urlencode($request->product_name) . "%0A• *Jumlah:* " . ($request->quantity ?? 1) . " unit%0A• *Nama Pemesan:* " . urlencode($request->customer_name) . "%0A• *No WhatsApp:* " . urlencode($request->customer_phone) . "%0A• *Alamat / Lokasi Lahan:* " . urlencode($request->delivery_address ?? '-') . "%0A• *Catatan Khusus:* " . urlencode($request->notes ?? '-') . "%0A%0AMohon info ketersediaan stok, faktur/invoice resmi, dan jadwal pengiriman. Terima kasih!";
+
+        return redirect("https://wa.me/{$waNumber}?text={$message}");
+    }
 }

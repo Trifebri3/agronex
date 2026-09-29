@@ -12,6 +12,8 @@ use App\Http\Controllers\WriterController;
 |--------------------------------------------------------------------------
 */
 Route::get('/', [PublicController::class, 'home'])->name('home');
+Route::get('/produk', [PublicController::class, 'products'])->name('products.index');
+Route::post('/produk/order', [PublicController::class, 'orderProduct'])->name('products.order');
 Route::post('/contact/submit', [PublicController::class, 'submitContact'])->name('contact.submit');
 Route::get('/esg', [PublicController::class, 'esg'])->name('esg');
 Route::get('/knowledge', [PublicController::class, 'knowledge'])->name('knowledge');

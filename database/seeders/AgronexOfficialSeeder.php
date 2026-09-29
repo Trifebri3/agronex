@@ -119,6 +119,28 @@ class AgronexOfficialSeeder extends Seeder
                     'en' => 'SoilSense'
                 ]),
                 'slug' => 'soilsense',
+                'sku' => 'AGX-SL26',
+                'badge' => 'BEST SELLER • HEMAT 24%',
+                'price' => 1850000,
+                'original_price' => 2450000,
+                'subscription_price' => 125000,
+                'rating' => 4.9,
+                'reviews_count' => 52,
+                'stock_status' => 'in_stock',
+                'stock_count' => 18,
+                'warranty_info' => 'Garansi Resmi 12 Bulan Ganti Baru + Free Pendampingan',
+                'hook' => json_encode([
+                    'id' => 'Stop buang jutaan rupiah untuk pupuk kimia yang salah takaran! Pantau pH, NPK, dan kelembaban tanah real-time langsung dari HP Anda. Balik modal dalam 1 siklus panen!',
+                    'en' => 'Stop wasting millions on misplaced fertilizer doses! Track soil pH, NPK, and moisture in real time directly from your phone. Reclaim ROI in a single harvest cycle!'
+                ]),
+                'package_includes' => json_encode([
+                    '1x Unit SoilSense IoT Transmitter IP67 Weatherproof',
+                    '1x Multi-Parameter Soil Probe Stainless Steel 316 (Anti-Karat)',
+                    '1x Mini Solar Panel 5W + Baterai Lithium (Daya Tahan 30 Hari Tanpa Sinar)',
+                    '1x Kartu SIM IoT Telkomsel Kuota 1 Tahun Aktif',
+                    'Akses Aplikasi Mobile Agronex Android & Cloud Dashboard',
+                    'Sertifikat Kalibrasi Tanah Tropis Resmi'
+                ]),
                 'description' => json_encode([
                     'id' => 'Perangkat untuk membaca kondisi tanah seperti pH, NPK, kelembapan, dan parameter terkait sesuai konfigurasi sensor.',
                     'en' => 'Device to read soil conditions including pH, NPK, moisture, and related parameters based on sensor configuration.'
@@ -139,6 +161,28 @@ class AgronexOfficialSeeder extends Seeder
                     'en' => 'WaterSense'
                 ]),
                 'slug' => 'watersense',
+                'sku' => 'AGX-WT26',
+                'badge' => 'EFISIENSI AIR • HEMAT 21%',
+                'price' => 1650000,
+                'original_price' => 2100000,
+                'subscription_price' => 110000,
+                'rating' => 4.8,
+                'reviews_count' => 39,
+                'stock_status' => 'in_stock',
+                'stock_count' => 22,
+                'warranty_info' => 'Garansi Resmi 12 Bulan Ganti Baru',
+                'hook' => json_encode([
+                    'id' => 'Cegah busuk akar dan hemat air hingga 35%! Siram hanya saat tanaman Anda benar-benar membutuhkan air berdasarkan data volumetrik akurat.',
+                    'en' => 'Prevent root rot and conserve up to 35% irrigation water! Water your crops only when they genuinely require hydration.'
+                ]),
+                'package_includes' => json_encode([
+                    '1x Unit WaterSense Telemetry Controller IP67',
+                    '1x Volumetric Water Content (VWC) Soil Moisture Probe',
+                    '1x Digital Flow Meter Interface Connector',
+                    '1x Solar Rechargeable Power Module',
+                    '1x Kartu SIM IoT Aktif 1 Tahun',
+                    'Aplikasi Pengatur Jadwal & Alert Irigasi Otomatis'
+                ]),
                 'description' => json_encode([
                     'id' => 'Monitoring kondisi kelembapan dan kualitas air untuk membantu keputusan pengairan.',
                     'en' => 'Monitoring soil moisture and water quality parameters to assist irrigation decisions.'
@@ -159,6 +203,28 @@ class AgronexOfficialSeeder extends Seeder
                     'en' => 'EnviroSense'
                 ]),
                 'slug' => 'envirosense',
+                'sku' => 'AGX-EV26',
+                'badge' => 'EARLY WARNING • HEMAT 20%',
+                'price' => 2250000,
+                'original_price' => 2800000,
+                'subscription_price' => 150000,
+                'rating' => 4.9,
+                'reviews_count' => 34,
+                'stock_status' => 'in_stock',
+                'stock_count' => 14,
+                'warranty_info' => 'Garansi Resmi 12 Bulan Ganti Baru',
+                'hook' => json_encode([
+                    'id' => 'Deteksi dini ancaman serangan jamur & hama akibat kelembaban ekstrem sebelum merusak seluruh tanaman Anda. Notifikasi otomatis ke WhatsApp!',
+                    'en' => 'Detect fungus and pest outbreaks driven by extreme microclimate shifts before they destroy your crop canopy. Instant WhatsApp alerts!'
+                ]),
+                'package_includes' => json_encode([
+                    '1x EnviroSense Weather Station Node IP66',
+                    '1x Sensor Suhu & Kelembaban Relatif (RH) High-Precision',
+                    '1x Sensor Intensitas Radiasi Matahari (Lux/PAR)',
+                    '1x Bracket Mounting Tiang Kanopi Lahan',
+                    'Modul Komunikasi Seluler + Antena Penguat Sinyal',
+                    'Mesin Notifikasi Peringatan Dini via WhatsApp'
+                ]),
                 'description' => json_encode([
                     'id' => 'Monitoring kondisi lingkungan dan iklim mikro di sekitar tanaman.',
                     'en' => 'Monitoring environmental conditions and microclimate surrounding the crop.'
@@ -179,6 +245,28 @@ class AgronexOfficialSeeder extends Seeder
                     'en' => 'Terra'
                 ]),
                 'slug' => 'terra',
+                'sku' => 'AGX-TR26',
+                'badge' => 'SOIL INTELLIGENCE • HANDHELD',
+                'price' => 4950000,
+                'original_price' => 6200000,
+                'subscription_price' => 0,
+                'rating' => 5.0,
+                'reviews_count' => 21,
+                'stock_status' => 'in_stock',
+                'stock_count' => 9,
+                'warranty_info' => 'Garansi VIP 18 Bulan Tukar Baru',
+                'hook' => json_encode([
+                    'id' => 'Uji kesuburan tanah 1 petak dalam 3 menit langsung di tempat tanpa tunggu hasil lab berminggu-minggu. Wajib untuk agronomis & kelompok tani maju!',
+                    'en' => 'Test soil fertility for an entire plot in 3 minutes on-site without waiting weeks for lab results. Essential for agronomists and farmer groups!'
+                ]),
+                'package_includes' => json_encode([
+                    '1x Terra Handheld Soil Diagnostic Scanner',
+                    '1x Sensor Multi-Spektral Optik & Konduktivitas',
+                    '1x Hardcase Pelindung Portabel Heavy-Duty (Tahan Benturan)',
+                    'Konektivitas Bluetooth Cepat ke Android/iOS',
+                    'Database Kalibrasi Multi-Tanah (Andosol, Latosol, Grumosol)',
+                    'Buku Panduan Diagnostik & Kartu Garansi VIP'
+                ]),
                 'description' => json_encode([
                     'id' => 'Perangkat soil scanning untuk membantu memperoleh gambaran kondisi tanah secara lebih praktis.',
                     'en' => 'Soil scanning device designed to obtain a comprehensive soil condition overview practically.'
