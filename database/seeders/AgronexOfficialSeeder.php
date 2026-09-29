@@ -386,16 +386,44 @@ class AgronexOfficialSeeder extends Seeder
             TeamMember::create($member);
         }
 
-        // 5. HAKI - Explicitly registered
+        // 5. HAKI - Explicitly registered (DJKI Kemenkumham RI)
         HakiItem::truncate();
         HakiItem::create([
             'title' => 'AGRONEX: Platform Cerdas Pertanian Berbasis Artificial Intelligence, Internet of Things, dan Augmented Reality',
-            'type' => 'Hak Cipta (Copyright)',
+            'type' => 'Program Komputer',
             'registration_number' => 'EC002026124181',
+            'record_number' => '001376609',
             'status' => 'Registered',
             'registration_date' => '2026-07-24',
-            'document_path' => '/images/haki.png'
+            'first_announced_date' => '31 Juli 2025',
+            'first_announced_place' => 'Kab. Bandung',
+            'creator_name' => 'TRI FEBRIANSAH dan SHANDY MUHAMMAD YUSUF',
+            'holder_name' => 'TRI FEBRIANSAH dan SHANDY MUHAMMAD YUSUF',
+            'address' => 'Bumi Jati Mekar Residence Blok C 26RT 002 RW 011, MALAKASARI, BALEENDAH, KAB. BANDUNG, JAWA BARAT, Indonesia, 40375',
+            'citizenship' => 'Indonesia',
+            'protection_period' => 'Berlaku selama 50 (lima puluh) tahun sejak Ciptaan tersebut pertama kali dilakukan Pengumuman',
+            'document_path' => 'images/haki.png',
+            'description' => 'Melindungi arsitektur sistem perangkat lunak, algoritma prediktif harga pangan, antarmuka pemrosesan telemetri IoT tanah, dan simulasi augmented reality tanaman.'
         ]);
+
+        HakiItem::create([
+            'title' => 'Sistem IOT dan Kecerdasan Buatan Untuk Monitoring dan Pengelolaan Air Terintegrasi',
+            'type' => 'Program Komputer',
+            'registration_number' => 'EC002026184233',
+            'record_number' => '001510305',
+            'status' => 'Registered',
+            'registration_date' => '2026-09-27',
+            'first_announced_date' => '12 Februari 2025',
+            'first_announced_place' => 'Kab. Bandung',
+            'creator_name' => 'TRI FEBRIANSAH',
+            'holder_name' => 'TRI FEBRIANSAH',
+            'address' => 'Perum Jatimekar Residence blok C 26, Malakasari, Baleendah, Kab.Bandung, 40375, Baleendah, Kab. Bandung, Jawa Barat, 40375',
+            'citizenship' => 'Indonesia',
+            'protection_period' => 'Berlaku selama 50 (lima puluh) tahun sejak Ciptaan tersebut pertama kali dilakukan Pengumuman',
+            'document_path' => 'images/hakiiotair.png',
+            'description' => 'Melindungi perangkat lunak sistem pemantauan telemetri irigasi presisi, sensor kualitas dan debit air cerdas, serta algoritma kecerdasan buatan untuk pengelolaan air pertanian terintegrasi.'
+        ]);
+
 
         // 6. Partners - Documented only
         Partner::truncate();

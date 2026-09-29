@@ -518,9 +518,9 @@
             <!-- Technical Assurance Card -->
             <div class="p-8 bg-forest text-primary-cream rounded-3xl shadow-lg space-y-5">
                 <span class="text-[10px] font-extrabold uppercase tracking-wider text-leaf-green-light">Sertifikasi &amp; Hak Cipta</span>
-                <h3 class="text-2xl font-bold font-display leading-tight">Teknologi Terdaftar Resmi HAKI Kemenkumham RI</h3>
+                <h3 class="text-2xl font-bold font-display leading-tight">Teknologi Terdaftar Resmi HAKI DJKI Kemenkumham RI</h3>
                 <p class="text-xs text-primary-cream/80 leading-relaxed font-light">
-                    Sistem telemetri IoT dan algoritma agronomi AGRONEX terdaftar secara sah di bawah nomor pencatatan resmi <strong class="text-white">EC002026124181</strong>. Keaslian perangkat keras, software, dan pemrosesan data terjamin 100%.
+                    Sistem telemetri IoT tanah, AI monitoring &amp; pengelolaan air, serta platform cerdas AGRONEX terdaftar secara sah di bawah nomor permohonan resmi <strong class="text-white">EC002026124181</strong> dan <strong class="text-white">EC002026184233</strong>. Keaslian perangkat keras, software, dan pemrosesan data terjamin 100%.
                 </p>
                 <div class="pt-2">
                     <a href="{{ route('home') }}#haki" class="inline-flex items-center space-x-2 text-xs font-bold text-leaf-green-light hover:underline">

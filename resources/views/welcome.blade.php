@@ -1192,7 +1192,7 @@
                     <ul class="space-y-2 text-xs text-charcoal/80">
                         <li class="flex items-start space-x-2">
                             <span class="text-leaf-green font-bold">&bull;</span>
-                            <span><strong>Kekayaan Intelektual (HAKI):</strong> Terdaftar resmi dengan nomor Hak Cipta EC002026124181 di DJKI Kemenkumham.</span>
+                            <span><strong>Kekayaan Intelektual (HAKI):</strong> Terdaftar resmi 2 Hak Cipta Program Komputer (EC002026124181 &amp; EC002026184233) di DJKI Kementerian Hukum RI.</span>
                         </li>
                         <li class="flex items-start space-x-2">
                             <span class="text-leaf-green font-bold">&bull;</span>
@@ -1350,85 +1350,145 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span class="text-xs font-bold uppercase tracking-widest text-leaf-green">Kekayaan Intelektual &bull; Intellectual Property</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-forest font-display">Kekayaan Intelektual</h2>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-forest font-display">Kekayaan Intelektual Terdaftar Resmi</h2>
             <p class="text-sm text-charcoal/70">
-                Paten dan hak cipta resmi yang terdaftar pada Kementerian Hukum dan Hak Asasi Manusia Republik Indonesia.
+                Pencatatan hak cipta program komputer resmi yang diterbitkan oleh Direktorat Jenderal Kekayaan Intelektual (DJKI), Kementerian Hukum Republik Indonesia.
             </p>
         </div>
 
-        @php
-            $hakiItem = $haki->first();
-        @endphp
-        @if($hakiItem)
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
-            <!-- Left Side: Table & Cert Info -->
-            <div class="lg:col-span-7 bg-white border border-sand/40 rounded-3xl p-6 sm:p-8 space-y-6 shadow-sm">
-                <div class="space-y-2">
-                    <span class="px-2.5 py-0.5 rounded-full bg-forest text-primary-cream text-[9px] font-bold uppercase tracking-wider">{{ $hakiItem->type }}</span>
-                    <h3 class="text-xl font-bold text-forest font-display leading-snug">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            @foreach($haki as $hakiItem)
+            <div class="bg-white border border-sand/40 rounded-3xl p-6 sm:p-8 space-y-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                <div class="space-y-5">
+                    <div class="flex items-center justify-between gap-2 flex-wrap">
+                        <span class="px-2.5 py-1 rounded-full bg-forest text-primary-cream text-[9px] font-bold uppercase tracking-wider font-mono">
+                            {{ $hakiItem->type }}
+                        </span>
+                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-leaf-green/10 text-leaf-green border border-leaf-green/20">
+                            Terdaftar Resmi DJKI
+                        </span>
+                    </div>
+
+                    <h3 class="text-lg sm:text-xl font-bold text-forest font-display leading-snug">
                         {{ $hakiItem->title }}
                     </h3>
+
+                    <!-- Detail Data Table -->
+                    <div class="grid grid-cols-2 gap-3.5 pt-3 border-t border-sand/30 text-xs">
+                        <div>
+                            <span class="font-bold text-charcoal/50 uppercase tracking-wider text-[9px] block">No. Permohonan:</span>
+                            <span class="font-mono font-bold text-forest text-xs">{{ $hakiItem->registration_number }}</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-charcoal/50 uppercase tracking-wider text-[9px] block">No. Pencatatan:</span>
+                            <span class="font-mono font-bold text-charcoal text-xs">{{ $hakiItem->record_number ?? '-' }}</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-charcoal/50 uppercase tracking-wider text-[9px] block">Tanggal Permohonan:</span>
+                            <span class="font-semibold text-charcoal text-[11px]">{{ $hakiItem->registration_date ? date('d F Y', strtotime($hakiItem->registration_date)) : '-' }}</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-charcoal/50 uppercase tracking-wider text-[9px] block">Pertama Diumumkan:</span>
+                            <span class="font-semibold text-charcoal text-[11px]">{{ $hakiItem->first_announced_date ? $hakiItem->first_announced_date . ' (' . $hakiItem->first_announced_place . ')' : '-' }}</span>
+                        </div>
+                        <div class="col-span-2">
+                            <span class="font-bold text-charcoal/50 uppercase tracking-wider text-[9px] block">Pencipta &amp; Pemegang Hak:</span>
+                            <span class="font-semibold text-forest text-[11px]">{{ $hakiItem->creator_name ?? 'TRI FEBRIANSAH' }}</span>
+                        </div>
+                        @if($hakiItem->protection_period)
+                        <div class="col-span-2">
+                            <span class="font-bold text-charcoal/50 uppercase tracking-wider text-[9px] block">Masa Pelindungan:</span>
+                            <span class="text-charcoal/70 text-[11px]">{{ $hakiItem->protection_period }}</span>
+                        </div>
+                        @endif
+                    </div>
+
+                    @if($hakiItem->description)
+                    <div class="bg-primary-cream/30 border border-sand/30 p-3.5 rounded-2xl">
+                        <p class="text-[11px] text-charcoal/70 leading-relaxed">
+                            {{ $hakiItem->description }}
+                        </p>
+                    </div>
+                    @endif
                 </div>
 
-                <div class="grid grid-cols-2 gap-4 pt-2 text-xs border-t border-sand/30">
-                    <div>
-                        <span class="font-bold text-charcoal/50 uppercase tracking-wider text-[9px] block">Nomor Hak Cipta:</span>
-                        <span class="font-mono font-bold text-forest text-sm">{{ $hakiItem->registration_number }}</span>
-                    </div>
-                    <div>
-                        <span class="font-bold text-charcoal/50 uppercase tracking-wider text-[9px] block">Status:</span>
-                        <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-leaf-green/10 text-leaf-green inline-block">{{ $hakiItem->status }} (Terdaftar)</span>
-                    </div>
-                    <div>
-                        <span class="font-bold text-charcoal/50 uppercase tracking-wider text-[9px] block">Tanggal Pendaftaran:</span>
-                        <span class="font-semibold text-charcoal">{{ $hakiItem->registration_date ? date('d F Y', strtotime($hakiItem->registration_date)) : '24 July 2026' }}</span>
-                    </div>
-                    <div>
-                        <span class="font-bold text-charcoal/50 uppercase tracking-wider text-[9px] block">Lembaga Pendaftar:</span>
-                        <span class="font-semibold text-charcoal">DJKI Kemenkumham RI</span>
-                    </div>
-                </div>
-
-                <p class="text-[11px] text-charcoal/60 leading-relaxed border-t border-sand/30 pt-3">
-                    Melindungi arsitektur sistem perangkat lunak, algoritma prediktif harga pangan, antarmuka IoT, dan simulasi augmented reality tanaman.
-                </p>
-            </div>
-
-            <!-- Right Side: Certificate Showcase -->
-            <div class="lg:col-span-5 flex justify-center">
-                <div class="bg-white border border-sand/40 p-4 rounded-3xl shadow-sm space-y-3 w-full max-w-sm">
-                    <div class="flex items-center justify-between px-1">
-                        <span class="text-[9px] font-bold text-leaf-green uppercase tracking-wider">Sertifikat Resmi HAKI</span>
-                        <span class="text-[9px] font-mono text-charcoal/50">{{ $hakiItem->registration_number }}</span>
-                    </div>
-                    <div class="w-full aspect-[3/4] rounded-2xl overflow-hidden border border-sand/60 relative group cursor-pointer" onclick="openHakiModal()">
-                        <img src="{{ asset($hakiItem->document_path ?? 'images/haki.png') }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Sertifikat HAKI AGRONEX">
-                        <div class="absolute inset-0 bg-forest/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span class="px-4 py-2 bg-white text-forest text-xs font-bold rounded-full shadow-lg">Lihat Ukuran Penuh</span>
+                <!-- Certificate Preview Box -->
+                <div class="pt-4 border-t border-sand/30">
+                    <div 
+                        class="w-full h-56 rounded-2xl overflow-hidden border border-sand/60 relative group cursor-pointer bg-primary-cream/20 flex items-center justify-center"
+                        onclick="openHakiModal('{{ asset($hakiItem->document_path ?? 'images/haki.png') }}', '{{ addslashes($hakiItem->title) }}', '{{ $hakiItem->registration_number }}', '{{ $hakiItem->record_number }}')"
+                    >
+                        <img 
+                            src="{{ asset($hakiItem->document_path ?? 'images/haki.png') }}" 
+                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" 
+                            alt="{{ $hakiItem->title }}"
+                        >
+                        <div class="absolute inset-0 bg-forest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+                            <span class="px-4 py-2 bg-white text-forest text-xs font-bold rounded-full shadow-lg">
+                                Buka Sertifikat Asli
+                            </span>
                         </div>
                     </div>
+                    <div class="mt-3 flex items-center justify-between text-[11px]">
+                        <span class="font-mono text-charcoal/60">{{ $hakiItem->registration_number }}</span>
+                        <button 
+                            type="button"
+                            onclick="openHakiModal('{{ asset($hakiItem->document_path ?? 'images/haki.png') }}', '{{ addslashes($hakiItem->title) }}', '{{ $hakiItem->registration_number }}', '{{ $hakiItem->record_number }}')"
+                            class="font-bold text-forest hover:text-leaf-green transition-colors flex items-center space-x-1"
+                        >
+                            <span>Perbesar Dokumen</span>
+                            <span>&rarr;</span>
+                        </button>
+                    </div>
                 </div>
             </div>
+            @endforeach
         </div>
-        @endif
     </div>
 
     <!-- HAKI Full Screen Preview Modal -->
     <div id="haki-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-forest/40 backdrop-blur-md" onclick="closeHakiModal()"></div>
-        <div class="relative bg-white border border-sand rounded-3xl max-w-2xl w-full p-4 overflow-hidden shadow-2xl z-10 flex flex-col items-center">
-            <div class="w-full flex justify-between items-center pb-2 border-b border-sand/40 mb-3">
-                <span class="text-xs font-bold text-forest uppercase tracking-wider">Sertifikat Resmi HAKI &bull; EC002026124181</span>
-                <button onclick="closeHakiModal()" class="text-charcoal hover:text-leaf-green transition-colors focus:outline-none">
+        <div class="absolute inset-0 bg-forest/50 backdrop-blur-sm" onclick="closeHakiModal()"></div>
+        <div class="relative bg-white border border-sand rounded-3xl max-w-2xl w-full p-5 overflow-hidden shadow-2xl z-10 flex flex-col items-center">
+            <div class="w-full flex justify-between items-start pb-3 border-b border-sand/40 mb-3">
+                <div class="pr-4 space-y-1">
+                    <span id="haki-modal-reg" class="text-[10px] font-bold text-leaf-green uppercase tracking-wider block font-mono"></span>
+                    <h4 id="haki-modal-title" class="text-sm font-bold text-forest font-display leading-tight line-clamp-2"></h4>
+                </div>
+                <button onclick="closeHakiModal()" class="text-charcoal hover:text-leaf-green p-1.5 rounded-full hover:bg-sand/30 transition-colors focus:outline-none">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
             </div>
-            <div class="w-full max-h-[80vh] overflow-y-auto rounded-xl border border-sand">
-                <img src="{{ asset('images/haki.png') }}" class="w-full h-auto object-contain" alt="HAKI Official Certificate">
+            <div class="w-full max-h-[75vh] overflow-y-auto rounded-2xl border border-sand/60 bg-sand/10 p-2">
+                <img id="haki-modal-img" src="{{ asset('images/haki.png') }}" class="w-full h-auto object-contain mx-auto rounded shadow-sm" alt="HAKI Official Certificate">
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    function openHakiModal(imgUrl, title, regNum, recordNum) {
+        const modal = document.getElementById('haki-modal');
+        const modalImg = document.getElementById('haki-modal-img');
+        const modalTitle = document.getElementById('haki-modal-title');
+        const modalReg = document.getElementById('haki-modal-reg');
+        if (modal && modalImg) {
+            modalImg.src = imgUrl;
+            if (modalTitle) modalTitle.textContent = title;
+            if (modalReg) modalReg.textContent = 'No. Permohonan: ' + regNum + (recordNum ? ' • No. Pencatatan: ' + recordNum : '');
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+    }
+
+    function closeHakiModal() {
+        const modal = document.getElementById('haki-modal');
+        if (modal) {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+    }
+</script>
 
 <!-- SECTION: TEAM (FROM DATABASE: team) -->
 <section id="team" class="py-24 bg-white border-b border-sand/35">

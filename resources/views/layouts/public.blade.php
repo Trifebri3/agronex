@@ -213,7 +213,7 @@
         <div class="max-w-7xl mx-auto px-6 border-t border-sand/60 pt-6 flex flex-col md:flex-row justify-between items-center text-[10px] text-charcoal/60 space-y-4 md:space-y-0">
             <div class="space-y-0.5 text-left">
                 <p class="font-bold text-forest">&copy; 2026 AGRONEX NUSANTARA. Ekosistem Agritech Berbasis Dampak untuk Indonesia.</p>
-                <p class="text-[9px] text-charcoal/60">HAKI Hak Cipta EC002026124181 &bull; Kemenkumham Republik Indonesia</p>
+                <p class="text-[9px] text-charcoal/60">HAKI Hak Cipta EC002026124181 &bull; EC002026184233 &bull; DJKI Kementerian Hukum Republik Indonesia</p>
                 <p class="text-[9px] text-charcoal/50">Legally represented by PT Yota Inovasi Nusantara &bull; Partnered with YOTA Adiwidya Center</p>
             </div>
             <div class="flex space-x-6">

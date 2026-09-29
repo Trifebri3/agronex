@@ -79,30 +79,57 @@ class RecognitionSeeder extends Seeder
             ],
             [
                 'category' => 'Intellectual Property',
-                'year' => '2025',
+                'year' => '2026',
                 'title' => json_encode([
-                    'en' => 'Copyright: AgroPredict AI Prediction Dashboard Software',
-                    'id' => 'Hak Cipta: Software Dashboard Prediksi AI AgroPredict'
+                    'en' => 'Copyright: AGRONEX Smart Agriculture Platform (AI, IoT & AR)',
+                    'id' => 'Hak Cipta: Platform Cerdas Pertanian AGRONEX (AI, IoT & AR)'
                 ]),
                 'organization' => json_encode([
                     'en' => 'Ministry of Law and Human Rights RI (Kemenkumham)',
-                    'id' => 'Kementerian Hukum dan Hak Asasi Manusia Republik Indonesia'
+                    'id' => 'Kementerian Hukum dan Hak Asasi Manusia Republik Indonesia (DJKI)'
                 ]),
                 'description' => json_encode([
-                    'en' => 'Officially registered software program under Intellectual Property Rights in Indonesia, protecting the proprietary crop identification and price forecasting algorithms.',
-                    'id' => 'Perlindungan hak cipta resmi atas perangkat lunak dashboard prediksi harga hortikultura dan sistem rekomendasi berbasis kecerdasan buatan.'
+                    'en' => 'Officially registered computer program (No. EC002026124181) protecting smart agriculture algorithms, IoT edge processing, and predictive crop analytics.',
+                    'id' => 'Pencatatan ciptaan resmi Program Komputer (No. EC002026124181) melindungi arsitektur software, algoritma analitik, dan telemetri IoT pertanian presisi.'
                 ]),
                 'award_logo_path' => 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Coat_of_arms_of_Indonesia.svg',
-                'certificate_path' => '/konten/Screenshot 2026-07-27 233232.png',
-                'doc_path' => '/konten/Screenshot 2026-07-27 233232.png',
+                'certificate_path' => '/images/haki.png',
+                'doc_path' => '/images/haki.png',
                 'story' => json_encode([
-                    'en' => 'In order to safeguard proprietary machine learning architectures, we filed for official copyright registry with the Directorate General of Intellectual Property, Indonesia.',
-                    'id' => 'Untuk memastikan perlindungan algoritma deteksi kesehatan tanaman dan kecerdasan buatan, tim mendaftarkan lisensi ciptaan secara resmi pada DJKI Kemenkumham RI.'
+                    'en' => 'Official copyright registered by Tri Febriansah and Shandy Muhammad Yusuf under Directorate General of Intellectual Property.',
+                    'id' => 'Hak cipta resmi yang dicatatkan oleh Tri Febriansah dan Shandy Muhammad Yusuf di bawah DJKI Kemenkumham RI.'
                 ]),
-                'related_project' => 'AgroPredict AI Platform',
+                'related_project' => 'AGRONEX Ecosystem Platform',
                 'media_coverage' => 'https://dgip.go.id/',
                 'team_member_id' => $triId,
                 'order_num' => 3,
+            ],
+            [
+                'category' => 'Intellectual Property',
+                'year' => '2026',
+                'title' => json_encode([
+                    'en' => 'Copyright: IoT & AI System for Integrated Water Monitoring & Management',
+                    'id' => 'Hak Cipta: Sistem IoT dan AI Untuk Monitoring dan Pengelolaan Air Terintegrasi'
+                ]),
+                'organization' => json_encode([
+                    'en' => 'Ministry of Law and Human Rights RI (Kemenkumham)',
+                    'id' => 'Kementerian Hukum dan Hak Asasi Manusia Republik Indonesia (DJKI)'
+                ]),
+                'description' => json_encode([
+                    'en' => 'Officially registered computer program (No. EC002026184233) protecting precision water telemetry, smart irrigation actuation, and AI water resources optimization.',
+                    'id' => 'Pencatatan ciptaan resmi Program Komputer (No. EC002026184233) melindungi otomasi telemetri irigasi, sensor kualitas air, dan AI efisiensi pengelolaan air terintegrasi.'
+                ]),
+                'award_logo_path' => 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Coat_of_arms_of_Indonesia.svg',
+                'certificate_path' => '/images/hakiiotair.png',
+                'doc_path' => '/images/hakiiotair.png',
+                'story' => json_encode([
+                    'en' => 'Official copyright registration granted to Tri Febriansah by Directorate General of Intellectual Property for integrated water management systems.',
+                    'id' => 'Surat Pencatatan Ciptaan resmi yang diterbitkan untuk Tri Febriansah oleh DJKI Kementerian Hukum atas sistem IoT dan AI pengelolaan air terintegrasi.'
+                ]),
+                'related_project' => 'AGRONEX Water Management IoT',
+                'media_coverage' => 'https://dgip.go.id/',
+                'team_member_id' => $triId,
+                'order_num' => 4,
             ],
             [
                 'category' => 'Strategic Partnerships',
